@@ -12,5 +12,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
 
         public Dictionary<string, string> LatinAlphabetTransformations { get; set; }
 
+        public Dictionary<string, string> PersonalTitlesAssimilations { get; set; }
+
     }
 }
