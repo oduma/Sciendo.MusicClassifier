@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sciendo.ArtistClassifier.Contracts\Sciendo.ArtistClassifier.Contracts.csproj" />
+    <ProjectReference Include="..\Sciendo.MusicClassifier.KnowledgeBaseProvider\Sciendo.MusicClassifier.KnowledgeBaseProvider.csproj" />
+  </ItemGroup>
+
+</Project>
