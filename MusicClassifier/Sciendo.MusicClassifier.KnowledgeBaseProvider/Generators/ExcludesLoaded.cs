@@ -21,7 +21,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
 
         public string PlaceholderAlbumArtists = "Various Artists";
 
-        public char[] CharactersSeparatorsForWords = new[] { ',', '/', ';', ':', '&', '+' };
+        public char[] CharactersSeparatorsForWords = new[] { ',', '/', ';', ':', '&'};
 
         public string[] WordsSeparatorsGlobal = new[]
         {
@@ -90,7 +90,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
 
         public string[] BandsForSplitting = new[]
         {
-                "+-",
                 "2000 Years BC",
                 "4 Hero",
                 "50 & 50 Brothers",
@@ -162,7 +161,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "Conductor And The Cowboy",
                 "Conga Radio",
                 "Construction & Destruction",
-                "Copilot Music + Sound",
                 "Count Basie & His Orchestra",
                 "Creature With The Atom Brain",
                 "Crosby, Stills, Nash & Young",
@@ -206,7 +204,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "F&F",
                 "Fighting With Wire",
                 "Flash & The Pan",
-                "Florence + The Machine",
                 "Followed By Static",
                 "F&M",
                 "The Frank And Walters",
@@ -239,7 +236,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "Honey and Salt",
                 "Hootie And The Blowfish",
                 "Hoots and Hellmouth",
-                "Horse + Donkey",
                 "Huey Lewis & The News",
                 "Ice & Cream",
                 "Ike & Tina Turner",
@@ -330,7 +326,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "Mumford & Sons",
                 "Murder By Death",
                 "Myka 9",
-                "MY RED + BLUE",
                 "The Naked And Famous",
                 "Nakia & His Southern Cousins",
                 "Nalin & Kane",
@@ -348,7 +343,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "O & Mina Tindle",
                 "Orchid and Hound",
                 "Or, the Whale",
-                "O + S",
                 "Oxford & Co.",
                 "Paddy O'Connor & Friends",
                 "Part 1",

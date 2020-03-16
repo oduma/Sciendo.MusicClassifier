@@ -73,6 +73,8 @@ namespace Sciendo.ArtistClassifier.Logic
 
             var firstPassSplitParts = simpleLatinLowerCaseProposedArtists.Split(
                 knowledgeBase.Excludes.CharactersSeparatorsForWords, StringSplitOptions.RemoveEmptyEntries);
+            firstPassSplitParts = ApplyConditionalSplits(firstPassSplitParts);
+
             foreach (var firstPassSplitPart in firstPassSplitParts)
             {
                 var wordParts = firstPassSplitPart.Split(new[] { knowledgeBase.Spliters.WordsSimpleSplitter },
@@ -97,6 +99,31 @@ namespace Sciendo.ArtistClassifier.Logic
                 if (artist != null)
                     yield return artist;
             }
+        }
+
+        private string[] ApplyConditionalSplits(string[] firstPassSplitParts)
+        {
+            foreach(var firstPassSplitPart in firstPassSplitParts)
+            {
+                foreach(var key in knowledgeBase.Spliters.ConditionalSplitters.Keys)
+                {
+                    if(firstPassSplitPart.Contains(key))
+                    {
+                        var trySplitAgain = firstPassSplitPart.Split(new string[] { key }, StringSplitOptions.RemoveEmptyEntries);
+                        if(trySplitAgain.Length==2)
+                        {
+                            if(trySplitAgain[0].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter },StringSplitOptions.RemoveEmptyEntries).Length
+                                >= knowledgeBase.Spliters.ConditionalSplitters[key] 
+                                && trySplitAgain[1].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
+                                >= knowledgeBase.Spliters.ConditionalSplitters[key])
+                            {
+                                return trySplitAgain;
+                            }
+                        }
+                    }
+                }
+            }
+            return firstPassSplitParts;
         }
 
         private string AssimilatePersonalTitles(string simpleLatinLowerCaseProposedArtists)
