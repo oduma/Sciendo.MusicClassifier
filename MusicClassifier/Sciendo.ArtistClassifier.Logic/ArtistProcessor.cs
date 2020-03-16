@@ -36,6 +36,8 @@ namespace Sciendo.ArtistClassifier.Logic
 
             var simpleLatinLowerCaseProposedArtists = GetSimpleLatinLowerCaseString(proposedArtist);
 
+            simpleLatinLowerCaseProposedArtists = AssimilatePersonalTitles(simpleLatinLowerCaseProposedArtists);
+
             //return pre-canned artists
             foreach (var artistExcludedFromSplitting in knowledgeBase.Excludes.ArtistsForSplitting)
             {
@@ -95,6 +97,17 @@ namespace Sciendo.ArtistClassifier.Logic
                 if (artist != null)
                     yield return artist;
             }
+        }
+
+        private string AssimilatePersonalTitles(string simpleLatinLowerCaseProposedArtists)
+        {
+            var result = string.Empty;
+            foreach(var key in knowledgeBase.Transforms.PersonalTitlesAssimilations.Keys)
+            {
+                result = simpleLatinLowerCaseProposedArtists
+                    .Replace(key, knowledgeBase.Transforms.PersonalTitlesAssimilations[key]);
+            }
+            return result;
         }
 
         private Artist ComposeArtistAndType(ref List<string> decomposedArtistName)

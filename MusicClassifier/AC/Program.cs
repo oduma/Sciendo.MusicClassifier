@@ -10,7 +10,7 @@ namespace AC
         static void Main(string[] args)
         {
             var artistProcessor = new ArtistProcessor(new KnowledgeBaseFactory(),
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "knowledgebase.json"));
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "newknowledgebase.json"));
             Console.WriteLine("Artist Name:");
             var proposedName = Console.ReadLine();
             while(proposedName!=null)
@@ -18,7 +18,7 @@ namespace AC
                 var result = artistProcessor.GetArtists(proposedName);
                 foreach(var artist in result)
                 {
-                    Console.WriteLine("Found: {1} - {0}.", artist.Name, artist.Type);
+                    Console.WriteLine("Found: {1} - {0}", artist.Name, artist.Type);
                 }
                 proposedName = Console.ReadLine();
             }
