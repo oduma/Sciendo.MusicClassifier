@@ -48,6 +48,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "grand",
                 "group",
                 "grupo",
+                "his",
                 "in",
                 "kids",
                 "kolektiv",
@@ -77,6 +78,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "und",
                 "we",
                 "y",
+                "&",
 
             };
 

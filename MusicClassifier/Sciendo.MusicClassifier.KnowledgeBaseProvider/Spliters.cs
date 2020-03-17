@@ -12,6 +12,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
         //public string FeaturedArtistsInTheTitle { get; set; }
 
         //splitter simple condition based on number of words before and after
-        public Dictionary<string, int> ConditionalSplitters { get; set; }
+        public Dictionary<string, Condition> ConditionalSplitters { get; set; }
     }
 }

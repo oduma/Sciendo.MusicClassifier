@@ -10,7 +10,7 @@ namespace KBG
         static void Main(string[] args)
         {
             var knowledgeBase = new KnowledgeBaseLoaded();
-            File.WriteAllText("newknowledgebase.json", JsonConvert.SerializeObject(knowledgeBase));
+            File.WriteAllText(@"C:\Code\Sciendo\Sciendo.MusicClassifier\Sciendo.MusicClassifier\MusicClassifier\Sciendo.MusicClassifier.KnowledgeBaseProvider\newknowledgebase.json", JsonConvert.SerializeObject(knowledgeBase));
         }
     }
 }

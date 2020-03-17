@@ -71,6 +71,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
         public Dictionary<string, string> PersonalTitlesAssimilations = new Dictionary<string, string>
         {
             {", jr", " jr" },
+            {", sr", " sr" }
         };
 
     }

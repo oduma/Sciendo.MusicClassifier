@@ -101,6 +101,8 @@ namespace Sciendo.ArtistClassifier.Logic
             }
         }
 
+        //probably need a bit of a different rule for composers e.g. Avey Tare, Panda Bear, Deakin & Geologist
+        //and possibly for featuring artists not sure though
         private string[] ApplyConditionalSplits(string[] firstPassSplitParts)
         {
             foreach(var firstPassSplitPart in firstPassSplitParts)
@@ -109,21 +111,32 @@ namespace Sciendo.ArtistClassifier.Logic
                 {
                     if(firstPassSplitPart.Contains(key))
                     {
-                        var trySplitAgain = firstPassSplitPart.Split(new string[] { key }, StringSplitOptions.RemoveEmptyEntries);
+                        var trySplitAgain = firstPassSplitPart.Split(new string[] { key }, 
+                            StringSplitOptions.RemoveEmptyEntries);
+                        for (int i = 0; i < trySplitAgain.Length; i++)
+                            trySplitAgain[i] = trySplitAgain[i].Trim();
                         if(trySplitAgain.Length==2)
                         {
-                            if(trySplitAgain[0].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter },StringSplitOptions.RemoveEmptyEntries).Length
-                                >= knowledgeBase.Spliters.ConditionalSplitters[key] 
-                                && trySplitAgain[1].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
-                                >= knowledgeBase.Spliters.ConditionalSplitters[key])
+                            if (SplitBecauseOfLength(key, trySplitAgain))
                             {
-                                return trySplitAgain;
+                                if (knowledgeBase.Spliters.ConditionalSplitters[key].Content==null)
+                                    return trySplitAgain;
+                                if (!trySplitAgain.Any(s=> knowledgeBase.Spliters.ConditionalSplitters[key].Content.Any(c=>s.Contains(c))))
+                                    return trySplitAgain;
                             }
                         }
                     }
                 }
             }
             return firstPassSplitParts;
+        }
+
+        private bool SplitBecauseOfLength(string key, string[] trySplitAgain)
+        {
+            return trySplitAgain[0].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
+                                            >= knowledgeBase.Spliters.ConditionalSplitters[key].Length
+                                            && trySplitAgain[1].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
+                                            >= knowledgeBase.Spliters.ConditionalSplitters[key].Length;
         }
 
         private string AssimilatePersonalTitles(string simpleLatinLowerCaseProposedArtists)
