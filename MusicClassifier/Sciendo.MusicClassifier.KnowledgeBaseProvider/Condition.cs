@@ -2,7 +2,9 @@
 {
     public class Condition
     {
-        public int Length { get; set; }
-        public string[] Content { get; set; } 
+        public LengthConditons LengthConditions { get; set; }
+        public string[] NonSplittingContent { get; set; }
+        
+        public int? Position { get; set; }
     }
 }

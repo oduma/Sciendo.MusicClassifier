@@ -15,6 +15,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
         //High chance for artist contain some words to be a band 
         public string[] BandWords = new[]
         {
+                "&",
                 "a",
                 "alliance",
                 "all",
@@ -26,6 +27,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "boys",
                 "bros",
                 "brothers",
+                "by",
                 "chamber",
                 "choir",
                 "chorale",
@@ -33,6 +35,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "club",
                 "collective",
                 "committee",
+                "con",
                 "der",
                 "duo",
                 "ensemble",
@@ -62,11 +65,13 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "or",
                 "orchestra",
                 "orchestre",
+                "original",
                 "orkestar",
                 "philarmonic",
                 "quartet",
                 "quintet",
                 "quintetto",
+                "radio",
                 "royal",
                 "sisters",
                 "society",
@@ -77,8 +82,9 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "twins",
                 "und",
                 "we",
+                "with",
                 "y",
-                "&",
+                "x",
 
             };
 

@@ -109,34 +109,73 @@ namespace Sciendo.ArtistClassifier.Logic
             {
                 foreach(var key in knowledgeBase.Spliters.ConditionalSplitters.Keys)
                 {
-                    if(firstPassSplitPart.Contains(key))
+                    if(knowledgeBase.Spliters.ConditionalSplitters[key].LengthConditions!=null &&
+                        knowledgeBase.Spliters.ConditionalSplitters[key].LengthConditions.Length.HasValue)
                     {
-                        var trySplitAgain = firstPassSplitPart.Split(new string[] { key }, 
-                            StringSplitOptions.RemoveEmptyEntries);
-                        for (int i = 0; i < trySplitAgain.Length; i++)
-                            trySplitAgain[i] = trySplitAgain[i].Trim();
-                        if(trySplitAgain.Length==2)
-                        {
-                            if (SplitBecauseOfLength(key, trySplitAgain))
-                            {
-                                if (knowledgeBase.Spliters.ConditionalSplitters[key].Content==null)
-                                    return trySplitAgain;
-                                if (!trySplitAgain.Any(s=> knowledgeBase.Spliters.ConditionalSplitters[key].Content.Any(c=>s.Contains(c))))
-                                    return trySplitAgain;
-                            }
-                        }
+                        var result = TryApplyingLengthConditionalSplitters(firstPassSplitPart, key);
+                        if (result != null)
+                            return result;
+                    }
+                    else if(knowledgeBase.Spliters.ConditionalSplitters[key].Position.HasValue)
+                    {
+                        var result = TryApplyingPositionConditionalSplitters(firstPassSplitPart, key);
+                        if (result != null)
+                            return result;
                     }
                 }
             }
             return firstPassSplitParts;
         }
 
+        private string[] TryApplyingPositionConditionalSplitters(string input, string conditionIdentifier)
+        {
+            var wordsInInput = input.Split(new[] { knowledgeBase.Spliters.WordsSimpleSplitter }, 
+                StringSplitOptions.RemoveEmptyEntries);
+            if (wordsInInput.Length < knowledgeBase.Spliters.ConditionalSplitters[conditionIdentifier].Position)
+                return null;
+
+            if (wordsInInput[knowledgeBase.Spliters.ConditionalSplitters[conditionIdentifier].Position.Value] == conditionIdentifier)
+                return null;
+            if(wordsInInput.Any(w=>w==conditionIdentifier))
+                return wordsInInput.Where(w => w != conditionIdentifier).ToArray();
+            return null;
+        }
+
+        private string[] TryApplyingLengthConditionalSplitters(string input, string conditionIdentifier)
+        {
+            if (input.Contains(conditionIdentifier))
+            {
+                var trySplitAgain = input.Split(new string[] { conditionIdentifier },
+                    StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < trySplitAgain.Length; i++)
+                    trySplitAgain[i] = trySplitAgain[i].Trim();
+                if (trySplitAgain.Length == 2)
+                {
+                    if (SplitBecauseOfLength(conditionIdentifier, trySplitAgain))
+                    {
+                        if (knowledgeBase.Spliters.ConditionalSplitters[conditionIdentifier].NonSplittingContent == null)
+                            return trySplitAgain;
+                        if (!trySplitAgain.Any(s => knowledgeBase.Spliters.ConditionalSplitters[conditionIdentifier].NonSplittingContent.Any(c => s.Contains(c))))
+                            return trySplitAgain;
+                    }
+                }
+            }
+            return null;
+        }
+
         private bool SplitBecauseOfLength(string key, string[] trySplitAgain)
         {
-            return trySplitAgain[0].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
-                                            >= knowledgeBase.Spliters.ConditionalSplitters[key].Length
-                                            && trySplitAgain[1].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
-                                            >= knowledgeBase.Spliters.ConditionalSplitters[key].Length;
+            if(knowledgeBase.Spliters.ConditionalSplitters[key].LengthConditions.AppliedTo==Applicability.Both)
+                return trySplitAgain[0].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
+                                            >= knowledgeBase.Spliters.ConditionalSplitters[key].LengthConditions.Length
+                       && trySplitAgain[1].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
+                                            >= knowledgeBase.Spliters.ConditionalSplitters[key].LengthConditions.Length;
+            if (knowledgeBase.Spliters.ConditionalSplitters[key].LengthConditions.AppliedTo == Applicability.Any)
+                return trySplitAgain[0].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
+                                            >= knowledgeBase.Spliters.ConditionalSplitters[key].LengthConditions.Length
+                       || trySplitAgain[1].Split(new char[] { knowledgeBase.Spliters.WordsSimpleSplitter }, StringSplitOptions.RemoveEmptyEntries).Length
+                                            >= knowledgeBase.Spliters.ConditionalSplitters[key].LengthConditions.Length;
+            return true;
         }
 
         private string AssimilatePersonalTitles(string simpleLatinLowerCaseProposedArtists)
