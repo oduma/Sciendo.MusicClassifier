@@ -122,7 +122,9 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             {';',null },
             //split on / allways
             {'/', null },
-            //split on , except when the first part is numeric only or the last part is any of the following "etc.",".","!","?"
+            //split on , except when the first part is numeric only 
+            //or the last part is any of the following "etc.",".","!","?"
+            //or any parts are only two caharacters long
             {',', new []
                 {
                     new ExceptionDefinition
@@ -142,6 +144,14 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                             @"\.",
                             @"\!",
                             @"\?",
+                        }
+                    },
+                    new ExceptionDefinition
+                    {
+                        Position = Position.Any,
+                        RegexTemplates=new []
+                        {
+                            @"(?:^|\W)[a-z0-9]{2}(?:$|\W)"
                         }
                     }
                 }
