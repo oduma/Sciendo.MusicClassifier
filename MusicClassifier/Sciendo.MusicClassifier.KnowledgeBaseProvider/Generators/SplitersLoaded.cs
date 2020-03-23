@@ -11,86 +11,141 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
         public char WordsSimpleSplitter = ' ';
         public string FeaturedArtistsInTheTitle = @"\([^)]*\)";
 
-        public Dictionary<string, Condition> ConditionalSplitters = new Dictionary<string, Condition>
+        public Dictionary<string, Conditions> ConditionalSplitters = new Dictionary<string, Conditions>
         {
-            {"+",new Condition
+            //if in the artist there is a + split it if all parts are at least 2 words per part
+            {"+",new Conditions
                 {
-                    LengthConditions=new
-                    LengthConditons
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
                     {
-                        Length=2,AppliedTo=Applicability.Both
+                        WordsPerPart=2,
+                        LengthAppliesToSplitParts=Applicability.All
                     }
                 }
             },
-            {":",new Condition
+            //if in the artist there is a : split it if all parts are at least 2 words per part
+            {":",new Conditions
                 {
-                    LengthConditions=new
-                    LengthConditons
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
                     {
-                        Length=2,AppliedTo=Applicability.Both
+                        WordsPerPart=2,
+                        LengthAppliesToSplitParts=Applicability.All
                     }
                 }
             },
-            {"&",new Condition
+            //if in the artist there is a & split it if all parts are at least 2 words per part,
+            //except if any of the parts contains the words: a, her, his, the
+            {"&",new Conditions
                 {
-                    LengthConditions=new
-                    LengthConditons
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
                     {
-                        Length=2,AppliedTo=Applicability.Both
-                    },
-                    NonSplittingContent=new []
-                    {
-                        "a ",
-                        "her ",
-                        "his ",
-                        "the ",
-                    } 
-                } 
-            },
-            {"and",new Condition
-                {
-                    LengthConditions=new
-                        LengthConditons
+                        WordsPerPart=2,
+                        LengthAppliesToSplitParts=Applicability.All,
+                        ExceptIfAnyPartsEqualRegex=new []
                         {
-                            Length=2,AppliedTo=Applicability.Both
-                        },
-                    NonSplittingContent=new []
+                            @"(?:^|\W)a(?:$|\W)",
+                            @"(?:^|\W)her(?:$|\W)",
+                            @"(?:^|\W)his(?:$|\W)",
+                            @"(?:^|\W)the(?:$|\W)",
+                        }
+                    }
+                }
+            },
+            //if in the artist there is an 'and' split it if all parts are at least 2 words per part,
+            //except if any of the parts contains the words: a, her, his, the
+            {"and",new Conditions
+                {
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
                     {
-                        "a ",
-                        "her ",
-                        "his ",
-                        "the ",
-                    } 
+                        WordsPerPart=2,
+                        LengthAppliesToSplitParts=Applicability.All,
+                        ExceptIfAnyPartsEqualRegex=new []
+                        {
+                            @"(?:^|\W)a(?:$|\W)",
+                            @"(?:^|\W)her(?:$|\W)",
+                            @"(?:^|\W)his(?:$|\W)",
+                            @"(?:^|\W)the(?:$|\W)",
+                        }
+                    }
+                }
+            },
+            //if in the artist there is a word 'con' use it as a splitter point,
+            //except if is the first word
+            {"con", new Conditions
+                {
+                    ExceptionPositionDefinition= new ExceptionDefinition
+                    {
+                        Position=Position.First
+                    }
                 } 
             },
-            {"con", new Condition{Position=0} },
-            {"der", new Condition{Position=0} },
-            {"with", new Condition
+            //if in the artist there is a word 'der' use it as a splitter point,
+            //except if is the first word
+            {"der", new Conditions
                 {
-                    LengthConditions=new
-                    LengthConditons
+                    ExceptionPositionDefinition= new ExceptionDefinition
                     {
-                        Length=2,AppliedTo=Applicability.Both
+                        Position=Position.First
+                    }
+                } 
+            },
+            //if in the artist there is an 'with' split it if all parts are at least 2 words per part,
+            {"with", new Conditions
+                {
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
+                    {
+                        WordsPerPart=2,LengthAppliesToSplitParts=Applicability.All
                     },
                 } 
             },
-            {"x", new Condition
+            //if in the artist there is an 'with' split it if any parts are at least 2 words per part,
+            {"x", new Conditions
                 {
-                    LengthConditions=new
-                    LengthConditons
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
                     {
-                        Length=2,AppliedTo=Applicability.Any
+                        WordsPerPart=2,LengthAppliesToSplitParts=Applicability.Any
                     },
                 } 
             },
         };
 
-        public Dictionary<char, Condition> ConditionalWordsSplitters = new Dictionary<char, Condition>
+        public Dictionary<char, IEnumerable<ExceptionDefinition>> ConditionalWordsSplitters = 
+            new Dictionary<char, IEnumerable<ExceptionDefinition>>
         {
-            {' ', null },
+            //split on ; always
             {';',null },
+            //split on / allways
             {'/', null },
-            {',', null },
+            //split on , except when the first part is numeric only or the last part is any of the following "etc.",".","!","?"
+            {',', new []
+                {
+                    new ExceptionDefinition
+                    {
+                        Position=Position.First,
+                        RegexTemplates=new []
+                        {
+                            @"^\d+$"
+                        }
+                    },
+                    new ExceptionDefinition
+                    {
+                        Position=Position.Last,
+                        RegexTemplates= new []
+                        {
+                            @"(?:^|\W)etc\.(?:$|\W)",
+                            @"\.",
+                            @"\!",
+                            @"\?",
+                        }
+                    }
+                }
+            },
         };
     }
 }

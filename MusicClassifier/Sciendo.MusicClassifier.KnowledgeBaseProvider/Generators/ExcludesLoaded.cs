@@ -21,7 +21,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
 
         public string PlaceholderAlbumArtists = "Various Artists";
 
-        public char[] CharactersSeparatorsForWords = new[] { ',', '/', ';'};
 
         //the words: by, and, &, with, con, radio, original, part, main, x usefull for featured artists  
         public string[] WordsSeparatorsGlobal = new[]
@@ -76,11 +75,9 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
 
         public string[] BandsForSplitting = new[]
         {
-                //"60,000,000 Buffalo",
                 "AC/DC",
                 "AC; DC",
                 "Artist Vs Poet",
-                //"Astronauts, etc.",
                 "Benny Turner and Real Blues",
                 "The Black & White Years",
                 "Blood, Sweat & Tears",
@@ -98,17 +95,13 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "Kawai, Mal Duo",
                 "Kitty, Daisy & Lewis",
                 "The Last Artful, Dodgr",
-                //"nothing,nowhere.",
                 "Now, Now",
-                //"Oh,Beast!",
                 "Oh, Rose",
                 "Or, the Whale",
                 "Peter, Bjorn and John",
                 "Project Jenny, Project Jan",
-                //"Quien es, Boom!",
                 "Shy, Low",
                 "Stoni Taylor & Miles Of Stones",
-                //"Super Onze, The Takamba champions of the Niger bend.",
                 "Tacks, the Boy Disaster",
                 "The Thing With Five Eyes",
                 "To Live And Die In LA",
