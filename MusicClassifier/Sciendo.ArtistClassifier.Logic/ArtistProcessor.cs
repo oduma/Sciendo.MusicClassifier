@@ -300,8 +300,11 @@ namespace Sciendo.ArtistClassifier.Logic
         {
 
             //most of the people names start and end with a letter
-            if (!char.IsLetter(decomposedArtistName[0][0]) || char.IsDigit(decomposedArtistName.Last()[0]))
+            if (!char.IsLetter(decomposedArtistName[0][0]) 
+                || !char.IsLetter(decomposedArtistName.Last()[0]))
                 return ArtistType.Band;
+            if (decomposedArtistName.Any(w => knowledgeBase.Rules.ArtistWords.Contains(w)))
+                return ArtistType.Artist;
 
             if (decomposedArtistName.Count >= knowledgeBase.Rules.MaxWordsPerArtist)
                 return ArtistType.Band;

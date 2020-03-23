@@ -88,6 +88,14 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
 
             };
 
+        //High chance for artist contining some words not to be a band
+        public string[] ArtistWords = new[]
+        {
+            "ii",
+            "iii",
+            "iv"
+        };
+
         public int MaxWordsPerArtist = 4;
     }
 }

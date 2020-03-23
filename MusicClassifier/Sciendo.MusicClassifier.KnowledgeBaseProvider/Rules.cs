@@ -14,6 +14,9 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
         //High chance for artist contain some words to be a band 
         public string[] BandWords { get; set; }
 
+        //High chance for artist contining some words not to be a band
+        public string[] ArtistWords { get; set; }
+
         public int MaxWordsPerArtist { get; set; }
     }
 }
