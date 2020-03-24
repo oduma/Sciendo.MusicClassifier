@@ -8,16 +8,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
 {
     public class ExcludesLoaded
     {
-        public string[] NonTitledInformationFromTitle = new[]
-        {
-                @"\(.?\)",
-                @"\(part \d*\)",
-                @"\(\d*\)",
-                "(live)",
-                "(instrumental)",
-                "(original mix)"
-            };
-        public string[] FeaturedMarkers = new[] { "(", ")" };
 
         public string PlaceholderAlbumArtists = "Various Artists";
 

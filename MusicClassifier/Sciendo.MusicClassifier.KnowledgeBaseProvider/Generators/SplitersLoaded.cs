@@ -9,7 +9,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
     public class SplitersLoaded
     {
         public char WordsSimpleSplitter = ' ';
-        public string FeaturedArtistsInTheTitle = @"\([^)]*\)";
 
         public Dictionary<string, Conditions> ConditionalSplitters = new Dictionary<string, Conditions>
         {
