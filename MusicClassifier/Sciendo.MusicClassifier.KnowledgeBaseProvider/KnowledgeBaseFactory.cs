@@ -10,6 +10,10 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
     {
         public KnowledgeBase GetKnowledgeBase(string file)
         {
+            if (string.IsNullOrEmpty(file))
+                throw new ArgumentNullException(nameof(file));
+            if (!File.Exists(file))
+                throw new ArgumentException($"{file} does not exist.");
             return JsonConvert.DeserializeObject<KnowledgeBase>(File.ReadAllText(file));
         }
     }
