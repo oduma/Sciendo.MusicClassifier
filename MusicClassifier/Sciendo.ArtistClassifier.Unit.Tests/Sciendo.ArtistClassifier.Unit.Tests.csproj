@@ -14,9 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sciendo.ArtistClassifier.Contracts\Sciendo.ArtistClassifier.Contracts.csproj" />
-    <ProjectReference Include="..\Sciendo.ArtistClassifier.Logic\Sciendo.ArtistClassifier.Logic.csproj" />
-    <ProjectReference Include="..\Sciendo.MusicClassifier.KnowledgeBaseProvider\Sciendo.MusicClassifier.KnowledgeBaseProvider.csproj" />
+    <ProjectReference Include="..\Sciendo.ArtistClassifier.Logic\Sciendo.ArtistClassifier.csproj" />
   </ItemGroup>
 
 </Project>

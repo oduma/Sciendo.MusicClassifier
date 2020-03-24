@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sciendo.MusicClassifier.KnowledgeBaseProvider\Sciendo.MusicClassifier.KnowledgeBaseProvider.csproj" />
+    <ProjectReference Include="..\Sciendo.ArtistClassifier.Logic\Sciendo.ArtistClassifier.csproj" />
   </ItemGroup>
 
 </Project>
