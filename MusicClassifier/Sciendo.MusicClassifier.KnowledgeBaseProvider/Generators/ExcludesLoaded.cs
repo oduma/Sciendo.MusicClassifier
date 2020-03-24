@@ -9,7 +9,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
     public class ExcludesLoaded
     {
 
-        public string PlaceholderAlbumArtists = "Various Artists";
+        public string PlaceholderAlbumArtists = "various artists";
 
 
         //the words: by, and, &, with, con, radio, original, part, main, x usefull for featured artists  

@@ -2,6 +2,12 @@
 {
     public class FeaturedRulesLoaded
     {
+        public char[] FeatureMarkers = new[]
+        {
+            '(',
+            ')'
+        };
+
         public string[] NonTitledInformationFromTitle = new[]
         {
             @"\(.?\)",

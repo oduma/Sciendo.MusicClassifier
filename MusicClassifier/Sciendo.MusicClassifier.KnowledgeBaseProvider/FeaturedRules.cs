@@ -7,6 +7,6 @@
         public string FeaturedArtistsInTheTitle { get; set; }
 
         public string[] WordsSeparatorsGlobal { get; set; }
-
+        public char[] FeatureMarkers { get; set; }
     }
 }

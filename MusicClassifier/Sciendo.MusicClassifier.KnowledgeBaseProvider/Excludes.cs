@@ -11,7 +11,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
     public class Excludes
     {
 
-        //public string PlaceholderAlbumArtists { get; set; }
+        public string PlaceholderAlbumArtists { get; set; }
 
         public string[] WordsSeparatorsGlobal { get; set; }
 

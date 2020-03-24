@@ -37,12 +37,18 @@ namespace Sciendo.ArtistClassifier.Logic
 
             var simpleLatinLowerCaseProposedArtists = GetSimpleLatinLowerCaseString(proposedArtist);
 
-            simpleLatinLowerCaseProposedArtists = AssimilatePersonalTitles(simpleLatinLowerCaseProposedArtists);
+            if(simpleLatinLowerCaseProposedArtists!=knowledgeBase.Excludes.PlaceholderAlbumArtists)
+            {
+                simpleLatinLowerCaseProposedArtists = AssimilatePersonalTitles(simpleLatinLowerCaseProposedArtists);
 
-            if (!isFeaturedArtist)
-                return GetArtistsFromString(simpleLatinLowerCaseProposedArtists, isComposer, false);
-            else
-                return GetArtistsFromTitleString(simpleLatinLowerCaseProposedArtists.ReplaceAll(knowledgeBase.FeaturedRules.NonTitledInformationFromTitle, string.Empty));
+
+                if (!isFeaturedArtist)
+                    return GetArtistsFromString(simpleLatinLowerCaseProposedArtists, isComposer, false);
+                else
+                    return GetArtistsFromTitleString(simpleLatinLowerCaseProposedArtists.ReplaceAll(knowledgeBase.FeaturedRules.NonTitledInformationFromTitle, string.Empty));
+
+            }
+            return null;
         }
 
 
@@ -52,13 +58,10 @@ namespace Sciendo.ArtistClassifier.Logic
                 knowledgeBase.FeaturedRules.FeaturedArtistsInTheTitle);
             if (possibleArtistsFeatures.Count > 0)
             {
-                var output = new string[possibleArtistsFeatures.Count];
-
-                possibleArtistsFeatures.CopyTo(output, 0);
-
                 List<Artist> artists = new List<Artist>();
-                foreach (var possibleArtistName in output)
-                    artists.AddRange(GetArtistsFromString(possibleArtistName, false, true));
+                foreach (var possibleArtistName in possibleArtistsFeatures)
+                    artists.AddRange(GetArtistsFromString(possibleArtistName.ToString()
+                        .Split(knowledgeBase.FeaturedRules.FeatureMarkers, StringSplitOptions.RemoveEmptyEntries)[0], false, true));
                 return artists;
             }
             return null;
@@ -97,12 +100,12 @@ namespace Sciendo.ArtistClassifier.Logic
                     {
                         decomposedArtistName.Add(wordPart);
                     }
-                    else
-                    {
-                        artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
-                        if (artist != null)
-                            yield return artist;
-                    }
+                    //else
+                    //{
+                    //    artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
+                    //    if (artist != null)
+                    //        yield return artist;
+                    //}
                 }
 
                 artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
