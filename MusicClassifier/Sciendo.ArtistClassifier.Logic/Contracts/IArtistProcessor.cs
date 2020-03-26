@@ -7,7 +7,7 @@ namespace Sciendo.ArtistClassifier.Contracts
 {
     public interface IArtistProcessor
     { 
-        IEnumerable<Artist> GetArtists(string proposedArtist, bool isComposer, bool isFeaturedArtist);
+        IEnumerable<Artist> GetArtists(string proposedArtist, bool isFeaturedArtist, bool isComposer);
 
     }
 }
