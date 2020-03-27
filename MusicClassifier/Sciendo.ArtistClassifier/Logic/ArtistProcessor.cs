@@ -89,7 +89,10 @@ namespace Sciendo.ArtistClassifier.Logic
             string[] firstPassSplitParts = TryComplexWordSeparators(simpleLatinLowerCaseProposedArtists);
             firstPassSplitParts = ApplyConditionalSplits(firstPassSplitParts);
 
-            return ExtractBandsAndArtists(firstPassSplitParts, isComposer, isFeatured);
+            var otherBandsAndArtists= ExtractBandsAndArtists(firstPassSplitParts, isComposer, isFeatured);
+            if (otherBandsAndArtists != null)
+                artists.AddRange(otherBandsAndArtists);
+            return artists;
         }
 
         private IEnumerable<Artist> ExtractBandsAndArtists(string[] firstPassSplitParts, bool isComposer, bool isFeatured)
@@ -267,6 +270,8 @@ namespace Sciendo.ArtistClassifier.Logic
         {
             var wordsInInput = input.Split(new[] { knowledgeBase.Spliters.WordsSimpleSplitter },
                 StringSplitOptions.RemoveEmptyEntries);
+            if (wordsInInput.Length == 0)
+                return null;
             switch(exceptionPositionDefinition.Position)
             {
                 case Position.First:
