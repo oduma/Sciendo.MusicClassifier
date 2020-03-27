@@ -296,7 +296,8 @@ namespace Sciendo.ArtistClassifier.Logic
                 {
                     if (SplitBecauseOfLength(conditionIdentifier, trySplitAgain, splitPartsLengthConditon))
                     {
-                        if (!splitPartsLengthConditon.ExceptIfAnyPartsEqualRegex.Any())
+                        if (splitPartsLengthConditon.ExceptIfAnyPartsEqualRegex==null || 
+                            !splitPartsLengthConditon.ExceptIfAnyPartsEqualRegex.Any())
                             return true;
                         if (!trySplitAgain.Any(s => 
                             splitPartsLengthConditon.ExceptIfAnyPartsEqualRegex.Any(c => Regex.IsMatch(s,c))
