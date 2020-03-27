@@ -10,7 +10,7 @@ namespace AC
         static void Main(string[] args)
         {
             var artistProcessor = new ArtistProcessor(new KnowledgeBaseFactory(),
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "newknowledgebase.json"));
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "KnowledgebaseProvider\\newknowledgebase.json"));
             Console.WriteLine("Artist Name:");
             var proposedName = Console.ReadLine();
             while(proposedName!=null)

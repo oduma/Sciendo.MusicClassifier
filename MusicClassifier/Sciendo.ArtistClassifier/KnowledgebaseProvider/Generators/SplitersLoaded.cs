@@ -55,7 +55,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             },
             //if in the artist there is an 'and' split it if all parts are at least 2 words per part,
             //except if any of the parts contains the words: a, her, his, the
-            {"and",new Conditions
+            {"and ",new Conditions
                 {
                     SplitPartsLengthCondition=new
                     SplitPartsLengthConditon
@@ -74,7 +74,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             },
             //if in the artist there is a word 'con' use it as a splitter point,
             //except if is the first word
-            {"con", new Conditions
+            {"con ", new Conditions
                 {
                     ExceptionPositionDefinition= new ExceptionDefinition
                     {
@@ -84,7 +84,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             },
             //if in the artist there is a word 'der' use it as a splitter point,
             //except if is the first word
-            {"der", new Conditions
+            {"der ", new Conditions
                 {
                     ExceptionPositionDefinition= new ExceptionDefinition
                     {
@@ -93,7 +93,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 } 
             },
             //if in the artist there is an 'with' split it if all parts are at least 2 words per part,
-            {"with", new Conditions
+            {" with ", new Conditions
                 {
                     SplitPartsLengthCondition=new
                     SplitPartsLengthConditon
@@ -103,7 +103,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 } 
             },
             //if in the artist there is an 'with' split it if any parts are at least 2 words per part,
-            {"x", new Conditions
+            {" x ", new Conditions
                 {
                     SplitPartsLengthCondition=new
                     SplitPartsLengthConditon

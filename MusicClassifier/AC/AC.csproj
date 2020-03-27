@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sciendo.ArtistClassifier.Logic\Sciendo.ArtistClassifier.csproj" />
+    <ProjectReference Include="..\Sciendo.ArtistClassifier\Sciendo.ArtistClassifier.csproj" />
   </ItemGroup>
 
 </Project>
