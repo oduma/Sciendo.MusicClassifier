@@ -60,8 +60,15 @@ namespace Sciendo.ArtistClassifier.Logic
             {
                 List<Artist> artists = new List<Artist>();
                 foreach (var possibleArtistName in possibleArtistsFeatures)
-                    artists.AddRange(GetArtistsFromString(possibleArtistName.ToString()
-                        .Split(knowledgeBase.FeaturedRules.FeatureMarkers, StringSplitOptions.RemoveEmptyEntries)[0], false, true));
+                {
+                    var featuredArtists = (possibleArtistName.ToString()
+                        .Split(knowledgeBase.FeaturedRules.FeatureMarkers, StringSplitOptions.RemoveEmptyEntries).Length==0)
+                        ?null
+                        :GetArtistsFromString(possibleArtistName.ToString()
+                        .Split(knowledgeBase.FeaturedRules.FeatureMarkers, StringSplitOptions.RemoveEmptyEntries)[0], false, true);
+                    if(featuredArtists!=null)
+                        artists.AddRange(featuredArtists);
+                }
                 return artists;
             }
             return null;
