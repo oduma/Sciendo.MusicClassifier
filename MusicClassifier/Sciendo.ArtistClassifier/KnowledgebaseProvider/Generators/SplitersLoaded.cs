@@ -35,7 +35,8 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 }
             },
             //if in the artist there is a & split it if all parts are at least 2 words per part,
-            //except if any of the parts contains the words: a, her, his, the
+            //except if any of the parts contains the words: a, her, his
+            //or it starts with the word: the
             {"&",new Conditions
                 {
                     SplitPartsLengthCondition=new
@@ -48,7 +49,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                             @"(?:^|\W)a(?:$|\W)",
                             @"(?:^|\W)her(?:$|\W)",
                             @"(?:^|\W)his(?:$|\W)",
-                            @"(?:^|\W)the(?:$|\W)",
+                            @"^(?:^|\W)the(?:$|\W)",
                         }
                     }
                 }
@@ -67,7 +68,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                             @"(?:^|\W)a(?:$|\W)",
                             @"(?:^|\W)her(?:$|\W)",
                             @"(?:^|\W)his(?:$|\W)",
-                            @"(?:^|\W)the(?:$|\W)",
+                            @"^(?:^|\W)the(?:$|\W)",
                         }
                     }
                 }
@@ -91,6 +92,26 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                         Position=Position.First
                     }
                 } 
+            },
+            //if in the artist there is an 'feat' split it if all parts are at least 1 words per part,
+            {" feat ", new Conditions
+                {
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
+                    {
+                        WordsPerPart=1,LengthAppliesToSplitParts=Applicability.All
+                    },
+                }
+            },
+            //if in the artist there is an 'feat' split it if all parts are at least 1 words per part,
+            {"feat. ", new Conditions
+                {
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
+                    {
+                        WordsPerPart=1,LengthAppliesToSplitParts=Applicability.All
+                    },
+                }
             },
             //if in the artist there is an 'with' split it if all parts are at least 2 words per part,
             {" with ", new Conditions
@@ -123,7 +144,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             {'/', null },
             //split on , except when the first part is numeric only 
             //or the last part is any of the following "etc.",".","!","?"
-            //or any parts are only two caharacters long
             {',', new []
                 {
                     new ExceptionDefinition
@@ -143,14 +163,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                             @"\.",
                             @"\!",
                             @"\?",
-                        }
-                    },
-                    new ExceptionDefinition
-                    {
-                        Position = Position.Any,
-                        RegexTemplates=new []
-                        {
-                            @"(?:^|\W)[a-z0-9]{2}(?:$|\W)"
                         }
                     }
                 }

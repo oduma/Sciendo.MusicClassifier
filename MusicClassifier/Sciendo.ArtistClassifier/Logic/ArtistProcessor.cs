@@ -61,17 +61,27 @@ namespace Sciendo.ArtistClassifier.Logic
                 List<Artist> artists = new List<Artist>();
                 foreach (var possibleArtistName in possibleArtistsFeatures)
                 {
-                    var featuredArtists = (possibleArtistName.ToString()
-                        .Split(knowledgeBase.FeaturedRules.FeatureMarkers, StringSplitOptions.RemoveEmptyEntries).Length==0)
-                        ?null
-                        :GetArtistsFromString(possibleArtistName.ToString()
-                        .Split(knowledgeBase.FeaturedRules.FeatureMarkers, StringSplitOptions.RemoveEmptyEntries)[0], false, true);
-                    if(featuredArtists!=null)
-                        artists.AddRange(featuredArtists);
+                    var proposedFeaturedArtists = possibleArtistName.ToString()
+                        .Split(knowledgeBase.FeaturedRules.FeatureMarkers, StringSplitOptions.RemoveEmptyEntries);
+                    if (ALikelyFeaturedArtist(proposedFeaturedArtists))
+                    {
+                        var featuredArtists = (proposedFeaturedArtists.Length == 0)
+                        ? null
+                        : GetArtistsFromString(proposedFeaturedArtists[0], false, true);
+                        if (featuredArtists != null)
+                            artists.AddRange(featuredArtists);
+                    }
                 }
                 return artists;
             }
             return null;
+        }
+
+        private bool ALikelyFeaturedArtist(string[] proposedFeaturedArtists)
+        {
+            if (proposedFeaturedArtists == null || proposedFeaturedArtists.Length != 1)
+                return false;
+            return Regex.IsMatch(proposedFeaturedArtists[0], knowledgeBase.FeaturedRules.FeaturedArtistSanityCheckRegEx);
         }
 
         private IEnumerable<Artist> GetArtistsFromString(string simpleLatinLowerCaseProposedArtists, bool isComposer, bool isFeatured)
@@ -183,7 +193,7 @@ namespace Sciendo.ArtistClassifier.Logic
                     if (knowledgeBase.Spliters.ConditionalWordsSplitters[key] == null 
                         || StringShouldBeSplit(input, key,knowledgeBase.Spliters.ConditionalWordsSplitters[key].ToArray()))
                     {
-                        result.AddRange(input.Split(new[] { key }, StringSplitOptions.RemoveEmptyEntries));
+                        result.AddRange(input.Split(new[] { key }, StringSplitOptions.RemoveEmptyEntries).Select(s=>s.Trim()));
                     }
                     else 
                     {
@@ -238,31 +248,70 @@ namespace Sciendo.ArtistClassifier.Logic
         //and possibly for featuring artists not sure though
         private string[] ApplyConditionalSplits(string[] firstPassSplitParts)
         {
+            List<string> parts = new List<string>();
             foreach(var firstPassSplitPart in firstPassSplitParts)
             {
+                var workString = firstPassSplitPart;
+
+                var notAffectedByAnyKeys = true;
                 foreach(var key in knowledgeBase.Spliters.ConditionalSplitters.Keys)
                 {
-                    if(knowledgeBase.Spliters.ConditionalSplitters[key].SplitPartsLengthCondition!=null &&
+                    if (workString.Contains(key))
+                    {
+                        if (knowledgeBase.Spliters.ConditionalSplitters[key].SplitPartsLengthCondition != null &&
                         knowledgeBase.Spliters.ConditionalSplitters[key].SplitPartsLengthCondition.WordsPerPart.HasValue
-                        && StringShouldBeSplit(firstPassSplitPart, key,
+                        && StringShouldBeSplit(workString, key,
                             knowledgeBase.Spliters.ConditionalSplitters[key].SplitPartsLengthCondition))
-                    {
-                        return firstPassSplitPart.Split(new[] { key }, StringSplitOptions.RemoveEmptyEntries);
-                    }
-                    if(knowledgeBase
-                        .Spliters.ConditionalSplitters[key]!=null &&
-                        knowledgeBase
-                        .Spliters.ConditionalSplitters[key].ExceptionPositionDefinition != null)
-                    {
+                        {
+                            var result = workString.Split(new[] { key }, StringSplitOptions.RemoveEmptyEntries)
+                                .Where(s => !string.IsNullOrEmpty(s)).Select(s=>s.Trim()).ToArray();
+                            if (result != null)
+                            {
+                                parts.AddRange(ApplyConditionalSplits(result));
+                                foreach(var partResult in result)
+                                {
+                                    workString = workString
+                                        .Replace(partResult, string.Empty)
+                                        .Replace(key,string.Empty)
+                                        .Trim();
+                                    
+                                }
+                            }
+                        }
+                        else if (knowledgeBase
+                            .Spliters.ConditionalSplitters[key] != null &&
+                            knowledgeBase
+                            .Spliters.ConditionalSplitters[key].ExceptionPositionDefinition != null)
+                        {
 
-                        var result = TryApplyingPositionConditionalSplitters(firstPassSplitPart, key, knowledgeBase
-                        .Spliters.ConditionalSplitters[key].ExceptionPositionDefinition);
-                        if (result != null)
-                            return result;
+                            var result = TryApplyingPositionConditionalSplitters(workString, key, knowledgeBase
+                            .Spliters.ConditionalSplitters[key].ExceptionPositionDefinition).Select(s=>s.Trim()).ToArray();
+                            if (result != null)
+                            {
+                                parts.AddRange(ApplyConditionalSplits(result));
+                                foreach(var partResult in result)
+                                {
+                                    workString = workString
+                                        .Replace(partResult, string.Empty)
+                                        .Replace(key, string.Empty)
+                                        .Trim();
+                                    ;
+                                }
+                            }
+                        }
+                        
+                        else
+                            parts.Add(workString);
+                        notAffectedByAnyKeys = false;
+                        if (string.IsNullOrEmpty(workString))
+                            continue;
                     }
                 }
+                if (notAffectedByAnyKeys)
+                    parts.Add(workString);
             }
-            return firstPassSplitParts;
+
+            return parts.ToArray();
         }
 
         private string[] TryApplyingPositionConditionalSplitters(string input, string wordSplitter, 
@@ -303,8 +352,12 @@ namespace Sciendo.ArtistClassifier.Logic
             {
                 var trySplitAgain = input.Split(new string[] { conditionIdentifier },
                     StringSplitOptions.RemoveEmptyEntries).Select(p=>p.Trim()).ToArray();
+                //take any whitespace in the string out
+                var trySplitAgainAvoidEmpty = input.Split(new string[] { conditionIdentifier },
+                    StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim())
+                    .Where(s => !string.IsNullOrEmpty(s)).ToArray();
 
-                if (trySplitAgain.Length > 1)
+                if (trySplitAgainAvoidEmpty.Length > 1)
                 {
                     if (SplitBecauseOfLength(conditionIdentifier, trySplitAgain, splitPartsLengthConditon))
                     {
@@ -317,6 +370,10 @@ namespace Sciendo.ArtistClassifier.Logic
                             return true;
                     }
                 }
+                if (trySplitAgain.Length > trySplitAgainAvoidEmpty.Length)
+                    return true;
+                if (trySplitAgainAvoidEmpty.Length == 1 && input.Length != trySplitAgainAvoidEmpty[0].Length)
+                    return true;
             }
             return false;
         }

@@ -59,5 +59,6 @@
             "✖",
         };
 
+        public string FeaturedArtistSanityCheckRegEx = "[a-z]{1}";
     }
 }

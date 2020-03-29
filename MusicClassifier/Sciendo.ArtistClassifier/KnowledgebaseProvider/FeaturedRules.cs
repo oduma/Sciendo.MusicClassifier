@@ -8,5 +8,7 @@
 
         public string[] WordsSeparatorsGlobal { get; set; }
         public char[] FeatureMarkers { get; set; }
+
+        public string FeaturedArtistSanityCheckRegEx { get; set; }
     }
 }
