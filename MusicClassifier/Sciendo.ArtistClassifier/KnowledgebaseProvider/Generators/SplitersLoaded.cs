@@ -113,6 +113,16 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                     },
                 }
             },
+            //if in the artist there is an 'ft.' split it if all parts are at least 1 words per part,
+            {"ft. ", new Conditions
+                {
+                    SplitPartsLengthCondition=new
+                    SplitPartsLengthConditon
+                    {
+                        WordsPerPart=1,LengthAppliesToSplitParts=Applicability.All
+                    },
+                }
+            },
             //if in the artist there is an 'with' split it if all parts are at least 2 words per part,
             {" with ", new Conditions
                 {
