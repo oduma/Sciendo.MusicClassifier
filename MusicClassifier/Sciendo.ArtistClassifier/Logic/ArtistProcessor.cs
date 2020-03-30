@@ -285,9 +285,10 @@ namespace Sciendo.ArtistClassifier.Logic
                         {
 
                             var result = TryApplyingPositionConditionalSplitters(workString, key, knowledgeBase
-                            .Spliters.ConditionalSplitters[key].ExceptionPositionDefinition).Select(s=>s.Trim()).ToArray();
+                            .Spliters.ConditionalSplitters[key].ExceptionPositionDefinition);
                             if (result != null)
                             {
+                                result = result.Select(s => s.Trim()).ToArray();
                                 parts.AddRange(ApplyConditionalSplits(result));
                                 foreach(var partResult in result)
                                 {
@@ -297,6 +298,12 @@ namespace Sciendo.ArtistClassifier.Logic
                                         .Trim();
                                     ;
                                 }
+                            }
+                            else 
+                            {
+                                if(workString.Trim()!=key.Trim())
+                                    parts.Add(workString);
+                                workString = "";
                             }
                         }
                         
@@ -327,9 +334,9 @@ namespace Sciendo.ArtistClassifier.Logic
             switch(exceptionPositionDefinition.Position)
             {
                 case Position.First:
-                    return AnalyseWordAtPoistion(wordsInInput, 0, wordSplitter);
+                    return AnalyseWordAtPoistion(wordsInInput, 0, wordSplitter.Trim());
                 case Position.Last:
-                    return AnalyseWordAtPoistion(wordsInInput, wordsInInput.Length-1, wordSplitter);
+                    return AnalyseWordAtPoistion(wordsInInput, wordsInInput.Length-1, wordSplitter.Trim());
                 case Position.Any:
                     break;
                 case Position.None:
