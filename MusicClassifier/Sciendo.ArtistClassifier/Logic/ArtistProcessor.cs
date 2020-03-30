@@ -251,7 +251,7 @@ namespace Sciendo.ArtistClassifier.Logic
             List<string> parts = new List<string>();
             foreach(var firstPassSplitPart in firstPassSplitParts)
             {
-                var workString = firstPassSplitPart;
+                var workString = firstPassSplitPart.Trim();
 
                 var notAffectedByAnyKeys = true;
                 foreach(var key in knowledgeBase.Spliters.ConditionalSplitters.Keys)
