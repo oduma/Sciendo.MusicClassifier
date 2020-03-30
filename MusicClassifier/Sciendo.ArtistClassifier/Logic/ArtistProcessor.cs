@@ -301,7 +301,10 @@ namespace Sciendo.ArtistClassifier.Logic
                         }
                         
                         else
+                        {
                             parts.Add(workString);
+                            workString = "";
+                        }
                         notAffectedByAnyKeys = false;
                         if (string.IsNullOrEmpty(workString))
                             continue;
