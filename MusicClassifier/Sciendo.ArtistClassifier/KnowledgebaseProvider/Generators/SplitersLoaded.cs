@@ -46,6 +46,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                         LengthAppliesToSplitParts=Applicability.All,
                         ExceptIfAnyPartsEqualRegex=new []
                         {
+                            @"^\d+$",
                             @"(?:^|\W)a(?:$|\W)",
                             @"(?:^|\W)her(?:$|\W)",
                             @"(?:^|\W)his(?:$|\W)",

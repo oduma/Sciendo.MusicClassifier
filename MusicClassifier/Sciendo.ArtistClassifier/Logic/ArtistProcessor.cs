@@ -187,22 +187,40 @@ namespace Sciendo.ArtistClassifier.Logic
         {
             List<string> result = new List<string>();
             StringBuilder accumulator = new StringBuilder("");
+            var americanNumber = GetAmericanNumber(input);
+            var numberStartingIndex = input.IndexOf(americanNumber);
             int index = 0;
-            foreach(char inputPart in input)
+            for(int i=index;i<input.Length;i++)
             {
-                if (CharacterIsASplitter(inputPart, index++, input))
+                if(i==numberStartingIndex && !string.IsNullOrEmpty(americanNumber))
                 {
-                    if (accumulator.Length > 0)
-                        result.Add(accumulator.ToString().Trim());
-                    accumulator.Clear();
+                    accumulator.Append(americanNumber);
+                    i = americanNumber.Length-1;
                 }
                 else
                 {
-                    accumulator.Append(inputPart);
+                    if (CharacterIsASplitter(input[i], i, input))
+                    {
+                        if (accumulator.Length > 0)
+                            result.Add(accumulator.ToString().Trim());
+                        accumulator.Clear();
+                    }
+                    else
+                    {
+                        accumulator.Append(input[i]);
+                    }
                 }
             }
             result.Add(accumulator.ToString().Trim());
             return result.ToArray();
+        }
+
+        private string GetAmericanNumber(string input)
+        {
+            var number = Regex.Match(input, knowledgeBase.Excludes.WellFormattedNumbers);
+            if (number.Success)
+                return number.Value;
+            return string.Empty;
         }
 
         private bool CharacterIsASplitter(char character, int position, string input)

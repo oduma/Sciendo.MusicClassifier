@@ -27,18 +27,15 @@
         public string[] FeatureMustContainWords = new[]
         {
             "arr.",
-            "edit",
             "feat",
             "featuring",
             "feat.",
             "ft.",
-            "mix",
             "mixed",
             "orch.",
             "presents",
             "pres.",
             "prod.",
-            "remix",
             "remixed",
             "vocals",
             "with"

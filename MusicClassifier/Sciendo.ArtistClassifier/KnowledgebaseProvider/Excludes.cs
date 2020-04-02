@@ -18,5 +18,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
         public string[] ArtistsForSplitting { get; set; }
 
         public string[] BandsForSplitting { get; set; }
+
+        public string WellFormattedNumbers { get; set; }
     }
 }

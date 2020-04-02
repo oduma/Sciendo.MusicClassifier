@@ -91,5 +91,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "To Live And Die In LA",
                 "You, Me, And Everyone We Know",
             };
+
+        public string WellFormattedNumbers = @"(?<!\S)(\d*\.?\d+|\d{1,3}(,\d{3})*(\.\d+)?)(?!\S)";
     }
 }
