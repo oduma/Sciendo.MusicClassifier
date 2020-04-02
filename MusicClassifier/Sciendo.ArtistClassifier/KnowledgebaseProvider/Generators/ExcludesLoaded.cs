@@ -62,12 +62,14 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
 
         public string[] BandsForSplitting = new[]
         {
+                "+-",
                 "AC/DC",
                 "AC; DC",
                 "Artist Vs Poet",
                 "Benny Turner and Real Blues",
                 "The Black & White Years",
                 "Blood, Sweat & Tears",
+                "Bohren & Der Club Of Gore",
                 "Crosby, Stills, Nash & Young",
                 "Drop Dead, Gorgeous",
                 "Earth, Wind & Fire",

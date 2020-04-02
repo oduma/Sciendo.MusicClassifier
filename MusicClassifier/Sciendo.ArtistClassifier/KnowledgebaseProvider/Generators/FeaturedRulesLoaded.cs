@@ -18,7 +18,31 @@
             "(original mix)"
         };
 
-        public string FeaturedArtistsInTheTitle = @"\((.*?)\)";
+        public string[] PossibleAreasForFeaturedArtistsMarkers = new[]
+        {
+            @"\((.*?)\)",
+            @"\[(.*?)\]"
+        };
+
+        public string[] FeatureMustContainWords = new[]
+        {
+            "arr.",
+            "edit",
+            "feat",
+            "featuring",
+            "feat.",
+            "ft.",
+            "mix",
+            "mixed",
+            "orch.",
+            "presents",
+            "pres.",
+            "prod.",
+            "remix",
+            "remixed",
+            "vocals",
+            "with"
+        };
 
         public string[] WordsSeparatorsGlobal = new[]
         {

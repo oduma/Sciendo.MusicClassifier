@@ -6,9 +6,8 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
 {
     public class ExceptionDefinition
     {
-        public Position Position { get; set; }
-
         public IEnumerable<string> RegexTemplates { get; set; }
 
+        public Position Position { get; set; }
     }
 }

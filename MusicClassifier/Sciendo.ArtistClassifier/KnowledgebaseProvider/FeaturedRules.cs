@@ -4,10 +4,11 @@
     {
         public string[] NonTitledInformationFromTitle { get; set; }
 
-        public string FeaturedArtistsInTheTitle { get; set; }
+        public string[] PossibleAreasForFeaturedArtistsMarkers { get; set; }
+
+        public string[] FeatureMustContainWords { get; set; }
 
         public string[] WordsSeparatorsGlobal { get; set; }
-        public char[] FeatureMarkers { get; set; }
 
         public string FeaturedArtistSanityCheckRegEx { get; set; }
     }

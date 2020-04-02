@@ -10,6 +10,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
     {
         public char WordsSimpleSplitter { get; set; }
         public Dictionary<string, Conditions> ConditionalSplitters { get; set; }
-        public Dictionary<char, IEnumerable<ExceptionDefinition>> ConditionalWordsSplitters { get; set; }
+        public Dictionary<char, IEnumerable<string>> ConditionalWordsSplitters { get; set; }
     }
 }

@@ -7,6 +7,31 @@ namespace Sciendo.ArtistClassifier.Logic
 {
     public static class Extensions
     {
+        public static string JoinTo(this string[] input, int position, char simpleWordsSplitter)
+        {
+            StringBuilder accumulator = new StringBuilder("");
+            for (int i = 0; i < position; i++)
+                accumulator.Append(input[i] + simpleWordsSplitter);
+            return accumulator.ToString().Trim();
+        }
+
+        public static string JoinFrom(this string[] input, int position, char simpleWordsSplitter)
+        {
+            StringBuilder accumulator = new StringBuilder("");
+            for (int i = position +1; i <input.Length; i++)
+                accumulator.Append(input[i] + simpleWordsSplitter);
+            return accumulator.ToString().Trim();
+        }
+
+        public static bool AnyMatch(this IEnumerable<string> regularExpressions, string input)
+        {
+            foreach(var regEx in regularExpressions)
+            {
+                if (Regex.IsMatch(input, regEx))
+                    return true;
+            }
+            return false;
+        }
         public static string ReplaceAll(this string input, IEnumerable<string> regexFind, string withString)
         {
             if (string.IsNullOrEmpty(input))
