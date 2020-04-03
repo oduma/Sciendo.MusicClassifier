@@ -26,25 +26,25 @@
 
         public string[] FeatureMustContainWords = new[]
         {
-            "arr.",
-            "feat",
-            "featuring",
-            "feat.",
-            "ft.",
-            "mixed",
-            "orch.",
-            "presents",
-            "pres.",
-            "prod.",
-            "remixed",
-            "vocals",
-            "with"
+            @"(?:^|\W)arr\.(?:$|\W)",
+            @"(?:^|\W)feat(?:$|\W)",
+            @"(?:^|\W)featuring(?:$|\W)",
+            @"(?:^|\W)feat\.(?:$|\W)",
+            @"(?:^|\W)ft\.(?:$|\W)",
+            @"(?:^|\W)mixed(?:$|\W)",
+            @"(?:^|\W)orch\.(?:$|\W)",
+            @"(?:^|\W)presents(?:$|\W)",
+            @"(?:^|\W)pres\.(?:$|\W)",
+            @"(?:^|\W)prod\.(?:$|\W)",
+            @"(?:^|\W)remixed(?:$|\W)",
+            @"(?:^|\W)vocals(?:$|\W)",
+            @"(?:^|\W)with(?:$|\W)",
+            @"(?:^|\W)remix(?:$|\W)$",
+
         };
 
         public string[] WordsSeparatorsGlobal = new[]
         {
-            "&",
-            "and,",    
             "arr.",
             "by",
             "ch",
@@ -52,10 +52,7 @@
             "demo",
             "edit",
             "extended",
-            "feat",
             "featuring",
-            "feat.",
-            "ft.",
             "instrumental",
             "main",
             "mix",
@@ -75,8 +72,6 @@
             "vocals",
             "vs",
             "vs.",
-            "with",
-            "x",
             "✖",
         };
 

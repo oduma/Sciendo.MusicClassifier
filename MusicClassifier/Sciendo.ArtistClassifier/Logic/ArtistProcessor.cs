@@ -108,30 +108,39 @@ namespace Sciendo.ArtistClassifier.Logic
         private IEnumerable<Artist> ExtractBandsAndArtists(string[] firstPassSplitParts, bool isComposer, bool isFeatured)
         {
             var wordsSeparatorsGlobal = (isFeatured) ? knowledgeBase.FeaturedRules.WordsSeparatorsGlobal : knowledgeBase.Excludes.WordsSeparatorsGlobal;
+            List<Artist> artists = new List<Artist>();
 
             foreach (var firstPassSplitPart in firstPassSplitParts)
             {
-                string[] wordParts = SplitOnWords(firstPassSplitPart);
-                var decomposedArtistName = new List<string>();
-                Artist artist;
-                foreach (var wordPart in wordParts)
-                {
-                    if (!wordsSeparatorsGlobal.Contains(wordPart))
-                    {
-                        decomposedArtistName.Add(wordPart);
-                    }
-                    //else
-                    //{
-                    //    artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
-                    //    if (artist != null)
-                    //        yield return artist;
-                    //}
-                }
-
-                artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
-                if (artist != null)
-                    yield return artist;
+                artists.AddRange(ExtractBandsAndArtistsFromString(firstPassSplitPart, wordsSeparatorsGlobal,isComposer,isFeatured));
             }
+            return artists;
+        }
+
+        private IEnumerable<Artist> ExtractBandsAndArtistsFromString(string input, string[] wordsSeparators, bool isComposer, bool isFeatured)
+        {
+
+            string[] wordParts = SplitOnWords(input);
+            var decomposedArtistName = new List<string>();
+            Artist artist;
+            foreach (var wordPart in wordParts)
+            {
+                if (!wordsSeparators.Contains(wordPart))
+                {
+                    decomposedArtistName.Add(wordPart);
+                }
+                else
+                {
+                    artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
+                    decomposedArtistName = new List<string>();
+                    if (artist != null)
+                        yield return artist;
+                }
+            }
+
+            artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
+            if (artist != null)
+                yield return artist;
         }
 
         private List<Artist> ExtractKnownBands(ref string simpleLatinLowerCaseProposedArtists, bool isComposer, bool isFeatured)
@@ -248,7 +257,7 @@ namespace Sciendo.ArtistClassifier.Logic
             List<string> parts = new List<string>();
             foreach(var firstPassSplitPart in firstPassSplitParts)
             {
-                parts.AddRange(ParseString(firstPassSplitPart.Trim()));
+                 parts.AddRange(ParseString(firstPassSplitPart.Trim()));
             }
 
             return parts.ToArray();
@@ -316,7 +325,7 @@ namespace Sciendo.ArtistClassifier.Logic
             switch(knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.LengthAppliesToSplitParts)
             {
                 case Applicability.All:
-                    if (position -1 > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart
+                    if (position > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart
                         && setOfWords.Length - position - 1 > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart)
                         return true;
                     else
@@ -328,7 +337,7 @@ namespace Sciendo.ArtistClassifier.Logic
                         else
                             return false;
                 case Applicability.Any:
-                    if (position -1 > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart
+                    if (position > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart
                         || setOfWords.Length - position -1 > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart)
                         return true;
                     else
