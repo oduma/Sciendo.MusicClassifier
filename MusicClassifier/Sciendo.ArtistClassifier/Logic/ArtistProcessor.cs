@@ -195,7 +195,7 @@ namespace Sciendo.ArtistClassifier.Logic
                 if(i==numberStartingIndex && !string.IsNullOrEmpty(americanNumber))
                 {
                     accumulator.Append(americanNumber);
-                    i = americanNumber.Length-1;
+                    i += americanNumber.Length-1;
                 }
                 else
                 {
