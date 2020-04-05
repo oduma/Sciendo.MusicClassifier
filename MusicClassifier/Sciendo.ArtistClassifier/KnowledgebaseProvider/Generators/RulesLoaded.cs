@@ -95,6 +95,8 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             "iii",
             "iv",
             "dr.",
+            "jr",
+            "sr",
         };
 
         public int MaxWordsPerArtist = 4;

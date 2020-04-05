@@ -63,7 +63,6 @@
             "presents",
             "pres.",
             "prod.",
-            "radio",
             "remix",
             "remixed",
             "theme",

@@ -43,6 +43,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                     SplitPartsLengthConditon
                     {
                         WordsPerPart=2,
+                        AvoidSplitForLength = 3,
                         LengthAppliesToSplitParts=Applicability.All,
                         ExceptIfAnyPartsEqualRegex=new []
                         {
@@ -64,6 +65,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                     {
                         WordsPerPart=2,
                         LengthAppliesToSplitParts=Applicability.All,
+                        AvoidSplitForLength = 3,
                         ExceptIfAnyPartsEqualRegex=new []
                         {
                             @"(?:^|\W)a(?:$|\W)",
@@ -140,6 +142,10 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             //if in the artist there is an 'with' split it if any parts are at least 2 words per part,
             {"x", new Conditions
                 {
+                    ExceptionPositionDefinition= new ExceptionDefinition
+                    {
+                        Position=Position.First
+                    },
                     SplitPartsLengthCondition=new
                     SplitPartsLengthConditon
                     {

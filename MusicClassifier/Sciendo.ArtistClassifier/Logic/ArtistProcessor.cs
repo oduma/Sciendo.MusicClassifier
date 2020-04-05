@@ -325,6 +325,9 @@ namespace Sciendo.ArtistClassifier.Logic
             switch(knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.LengthAppliesToSplitParts)
             {
                 case Applicability.All:
+                    if (knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength.HasValue
+                        && setOfWords.Length == knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength)
+                        return true;
                     if (position > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart
                         && setOfWords.Length - position - 1 > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart)
                         return true;
@@ -337,6 +340,9 @@ namespace Sciendo.ArtistClassifier.Logic
                         else
                             return false;
                 case Applicability.Any:
+                    if (knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength.HasValue
+                        && setOfWords.Length == knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength)
+                        return true;
                     if (position > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart
                         || setOfWords.Length - position -1 > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart)
                         return true;
@@ -354,10 +360,10 @@ namespace Sciendo.ArtistClassifier.Logic
         }
         private string AssimilatePersonalTitles(string simpleLatinLowerCaseProposedArtists)
         {
-            var result = string.Empty;
+            var result = simpleLatinLowerCaseProposedArtists;
             foreach(var key in knowledgeBase.Transforms.PersonalTitlesAssimilations.Keys)
             {
-                result = simpleLatinLowerCaseProposedArtists
+                result = result
                     .Replace(key, knowledgeBase.Transforms.PersonalTitlesAssimilations[key]);
             }
             return result;
