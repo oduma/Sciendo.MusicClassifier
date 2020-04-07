@@ -7,6 +7,6 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider
     {
         public SplitPartsLengthConditon SplitPartsLengthCondition { get; set; }
 
-        public ExceptionDefinition ExceptionPositionDefinition { get; set; }
+        public ExceptionDefinition[] ExceptionPositionDefinitions { get; set; }
     }
 }

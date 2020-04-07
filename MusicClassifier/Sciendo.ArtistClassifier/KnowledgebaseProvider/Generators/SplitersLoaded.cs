@@ -80,9 +80,12 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             //except if is the first word
             {"con", new Conditions
                 {
-                    ExceptionPositionDefinition= new ExceptionDefinition
+                    ExceptionPositionDefinitions= new ExceptionDefinition[]
                     {
-                        Position=Position.First
+                        new ExceptionDefinition
+                        {
+                            Position=Position.First
+                        }
                     }
                 } 
             },
@@ -142,9 +145,16 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             //if in the artist there is an 'with' split it if any parts are at least 2 words per part,
             {"x", new Conditions
                 {
-                    ExceptionPositionDefinition= new ExceptionDefinition
+                    ExceptionPositionDefinitions= new ExceptionDefinition[]
                     {
-                        Position=Position.First
+                        new ExceptionDefinition
+                        {
+                            Position=Position.First
+                        },
+                        new ExceptionDefinition
+                        {
+                            Position=Position.Last
+                        },
                     },
                     SplitPartsLengthCondition=new
                     SplitPartsLengthConditon

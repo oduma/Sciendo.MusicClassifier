@@ -311,27 +311,31 @@ namespace Sciendo.ArtistClassifier.Logic
         {
             if (!knowledgeBase.Spliters.ConditionalSplitters.ContainsKey(word))
                 return false;
-            if (knowledgeBase.Spliters.ConditionalSplitters[word].ExceptionPositionDefinition == null)
+            if (knowledgeBase.Spliters.ConditionalSplitters[word].ExceptionPositionDefinitions == null)
                 return false;
-            switch(knowledgeBase.Spliters.ConditionalSplitters[word].ExceptionPositionDefinition.Position)
+            foreach(var exceptionPosition in knowledgeBase.Spliters.ConditionalSplitters[word].ExceptionPositionDefinitions)
             {
-                case Position.None:
-                    return false;
-                case Position.First:
-                    if (position == 0)
+                switch (exceptionPosition.Position)
+                {
+                    case Position.None:
+                        break;
+                    case Position.First:
+                        if (position == 0)
+                            return true;
+                        else
+                            break;
+                    case Position.Last:
+                        if (position == maxNoOfWords)
+                            return true;
+                        else
+                            break;
+                    case Position.Any:
                         return true;
-                    else
-                        return false;
-                case Position.Last:
-                    if (position == maxNoOfWords)
-                        return true;
-                    else
-                        return false;
-                case Position.Any:
-                    return true;
-                default:
-                    return false;
+                    default:
+                        break;
+                }
             }
+            return false;
         }
 
         private bool WordIsNotaSplitterInContext(string word, string[] setOfWords, int position)
