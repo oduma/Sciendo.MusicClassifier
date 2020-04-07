@@ -15,7 +15,7 @@ namespace AC
             var proposedName = Console.ReadLine();
             while(proposedName!=null)
             {
-                var result = artistProcessor.GetArtists(proposedName,true,false);
+                var result = artistProcessor.GetArtists(proposedName,false,false);
                 if(result!=null)
                     foreach(var artist in result)
                     {

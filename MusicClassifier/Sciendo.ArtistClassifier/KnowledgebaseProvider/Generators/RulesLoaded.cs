@@ -10,7 +10,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
     {
         //99% chance for being a band for artist that start with "The ", "El ", "My " or "New "
         public string[] BandStartWords = new[]
-            { "el", "my", "new", "the",  };
+            { "el", "my", "new", "the" };
 
         //High chance for artist contain some words to be a band 
         public string[] BandWords = new[]
@@ -20,6 +20,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "alliance",
                 "all",
                 "an",
+                "and",
                 "association",
                 "at",
                 "band",

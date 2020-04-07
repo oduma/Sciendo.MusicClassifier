@@ -97,38 +97,38 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             //    } 
             //},
             //if in the artist there is an 'feat' split it if any part are at least 1 words per part,
-            {"feat", new Conditions
-                {
-                    SplitPartsLengthCondition=null
-                //new
-                //    SplitPartsLengthConditon
-                //    {
-                //        WordsPerPart=0,LengthAppliesToSplitParts=Applicability.Any
-                //    },
-                }
-            },
+            //{"feat", new Conditions
+            //    {
+            //        SplitPartsLengthCondition=null
+            //    //new
+            //    //    SplitPartsLengthConditon
+            //    //    {
+            //    //        WordsPerPart=0,LengthAppliesToSplitParts=Applicability.Any
+            //    //    },
+            //    }
+            //},
             //if in the artist there is an 'feat' split it if any part are at least 1 words per part,
-            {"feat.", new Conditions
-                {
-                    SplitPartsLengthCondition=null
-                //new
-                //    SplitPartsLengthConditon
-                //    {
-                //        WordsPerPart=0,LengthAppliesToSplitParts=Applicability.Any
-                //    },
-                }
-            },
+            //{"feat.", new Conditions
+            //    {
+            //        SplitPartsLengthCondition=null
+            //    //new
+            //    //    SplitPartsLengthConditon
+            //    //    {
+            //    //        WordsPerPart=0,LengthAppliesToSplitParts=Applicability.Any
+            //    //    },
+            //    }
+            //},
             //if in the artist there is an 'ft.' split it if any part are at least 1 words per part,
-            {"ft.", new Conditions
-                {
-                    SplitPartsLengthCondition=null
-                //new
-                //    SplitPartsLengthConditon
-                //    {
-                //        WordsPerPart=0,LengthAppliesToSplitParts=Applicability.Any
-                //    },
-                }
-            },
+            //{"ft.", new Conditions
+            //    {
+            //        SplitPartsLengthCondition=null
+            //    //new
+            //    //    SplitPartsLengthConditon
+            //    //    {
+            //    //        WordsPerPart=0,LengthAppliesToSplitParts=Applicability.Any
+            //    //    },
+            //    }
+            //},
             //if in the artist there is an 'with' split it if all parts are at least 2 words per part,
             {"with", new Conditions
                 {

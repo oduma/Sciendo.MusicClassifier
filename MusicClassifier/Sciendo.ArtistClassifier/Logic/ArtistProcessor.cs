@@ -97,6 +97,8 @@ namespace Sciendo.ArtistClassifier.Logic
                 return artists;
 
             string[] firstPassSplitParts = TryComplexWordSeparators(simpleLatinLowerCaseProposedArtists);
+            firstPassSplitParts = CleanNoiseWordsFromStrings(firstPassSplitParts, isFeatured);
+
             firstPassSplitParts = ApplyConditionalSplits(firstPassSplitParts);
 
             var otherBandsAndArtists= ExtractBandsAndArtists(firstPassSplitParts, isComposer, isFeatured);
@@ -105,42 +107,54 @@ namespace Sciendo.ArtistClassifier.Logic
             return artists;
         }
 
-        private IEnumerable<Artist> ExtractBandsAndArtists(string[] firstPassSplitParts, bool isComposer, bool isFeatured)
+        private string[] CleanNoiseWordsFromStrings(string[] firstPassSplitParts, bool isFeatured)
         {
             var wordsSeparatorsGlobal = (isFeatured) ? knowledgeBase.FeaturedRules.WordsSeparatorsGlobal : knowledgeBase.Excludes.WordsSeparatorsGlobal;
-            List<Artist> artists = new List<Artist>();
-
+            List<string> cleanArtists = new List<string>();
             foreach (var firstPassSplitPart in firstPassSplitParts)
             {
-                artists.AddRange(ExtractBandsAndArtistsFromString(firstPassSplitPart, wordsSeparatorsGlobal,isComposer,isFeatured));
+                cleanArtists.AddRange(CleanNoiseWordsFromString(firstPassSplitPart, wordsSeparatorsGlobal, isFeatured));
             }
-            return artists;
+            return cleanArtists.ToArray();
         }
 
-        private IEnumerable<Artist> ExtractBandsAndArtistsFromString(string input, string[] wordsSeparators, bool isComposer, bool isFeatured)
+        private IEnumerable<string> CleanNoiseWordsFromString(string input, string[] wordsSeparatorsGlobal, bool isFeatured)
         {
-
             string[] wordParts = SplitOnWords(input);
             var decomposedArtistName = new List<string>();
-            Artist artist;
+            string cleanArtist = "";
             foreach (var wordPart in wordParts)
             {
-                if (!wordsSeparators.Contains(wordPart))
+                if (!wordsSeparatorsGlobal.Contains(wordPart))
                 {
                     decomposedArtistName.Add(wordPart);
                 }
                 else
                 {
-                    artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
-                    decomposedArtistName = new List<string>();
-                    if (artist != null)
-                        yield return artist;
+                    if (decomposedArtistName.Count > 0)
+                    {
+                        cleanArtist = ComposeArtistName(decomposedArtistName);
+                        decomposedArtistName = new List<string>();
+                        if (!string.IsNullOrEmpty(cleanArtist))
+                            yield return cleanArtist;
+                    }
                 }
             }
 
-            artist = ComposeArtistAndType(ref decomposedArtistName, isComposer, isFeatured);
-            if (artist != null)
-                yield return artist;
+            cleanArtist = ComposeArtistName(decomposedArtistName);
+            if (!string.IsNullOrEmpty(cleanArtist))
+                yield return cleanArtist;
+        }
+
+        private IEnumerable<Artist> ExtractBandsAndArtists(string[] firstPassSplitParts, bool isComposer, bool isFeatured)
+        {
+            List<Artist> artists = new List<Artist>();
+
+            foreach (var firstPassSplitPart in firstPassSplitParts)
+            {
+                artists.Add(ComposeArtistAndType(firstPassSplitPart, DetermineArtistType(SplitOnWords(firstPassSplitPart)), isComposer, isFeatured));
+            }
+            return artists;
         }
 
         private List<Artist> ExtractKnownBands(ref string simpleLatinLowerCaseProposedArtists, bool isComposer, bool isFeatured)
@@ -281,8 +295,12 @@ namespace Sciendo.ArtistClassifier.Logic
                 }
                 else
                 {
-                    result.Add(accumulator.ToString().Trim());
-                    accumulator.Clear();
+                    var tempResult = accumulator.ToString().Trim();
+                    if (!string.IsNullOrEmpty(tempResult))
+                    {
+                        result.Add(tempResult);
+                        accumulator.Clear();
+                    }
                 }
             }
             result.Add(accumulator.ToString().Trim());
@@ -326,7 +344,9 @@ namespace Sciendo.ArtistClassifier.Logic
             {
                 case Applicability.All:
                     if (knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength.HasValue
-                        && setOfWords.Length == knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength)
+                        && setOfWords.Length == knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength
+                        && position!=0
+                        && position != setOfWords.Length-1)
                         return true;
                     if (position > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart
                         && setOfWords.Length - position - 1 > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart)
@@ -341,7 +361,9 @@ namespace Sciendo.ArtistClassifier.Logic
                             return false;
                 case Applicability.Any:
                     if (knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength.HasValue
-                        && setOfWords.Length == knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength)
+                        && setOfWords.Length == knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.AvoidSplitForLength
+                        && position != 0
+                        && position != setOfWords.Length - 1)
                         return true;
                     if (position > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart
                         || setOfWords.Length - position -1 > knowledgeBase.Spliters.ConditionalSplitters[word].SplitPartsLengthCondition.WordsPerPart)
@@ -369,23 +391,16 @@ namespace Sciendo.ArtistClassifier.Logic
             return result;
         }
 
-        private Artist ComposeArtistAndType(ref List<string> decomposedArtistName, bool isComposer, bool isFeatured)
+        private Artist ComposeArtistAndType(string artistName, ArtistType artistType,  bool isComposer, bool isFeatured)
         {
-            if (decomposedArtistName.Count > 0)
+            var artist = new Artist
             {
-
-                var artist = new Artist
-                {
-                    Name = ComposeArtistName(decomposedArtistName),
-                    Type = DetermineArtistType(decomposedArtistName),
-                    IsComposer=isComposer,
-                    IsFeatured=isFeatured
-                };
-                decomposedArtistName = new List<string>();
-                return artist;
-            }
-
-            return null;
+                Name = artistName,
+                Type = artistType,
+                IsComposer=isComposer,
+                IsFeatured=isFeatured
+            };
+            return artist;
         }
 
         private string ComposeArtistName(List<string> decomposedArtistName)
@@ -398,7 +413,7 @@ namespace Sciendo.ArtistClassifier.Logic
                 : recomposedArtistName.Trim();
         }
 
-        private ArtistType DetermineArtistType(List<string> decomposedArtistName)
+        private ArtistType DetermineArtistType(string[] decomposedArtistName)
         {
 
             //most of the people names start and end with a letter
@@ -409,7 +424,7 @@ namespace Sciendo.ArtistClassifier.Logic
             if (decomposedArtistName.Any(w => knowledgeBase.Rules.ArtistWords.Contains(w)))
                 return ArtistType.Artist;
 
-            if (decomposedArtistName.Count >= knowledgeBase.Rules.MaxWordsPerArtist)
+            if (decomposedArtistName.Length >= knowledgeBase.Rules.MaxWordsPerArtist)
                 return ArtistType.Band;
             
             if (knowledgeBase.Rules.BandStartWords.Any(w => w == decomposedArtistName[0]))
