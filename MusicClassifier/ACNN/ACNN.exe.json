@@ -1,0 +1,8 @@
+{
+  "nlpConfig": {
+    "JarRoot": "C:\\Code\\Sciendo\\model.for.nlp",
+    "ClassifiersDirectory": "\\classifiers",
+    "Ner3ClassesModel": "\\english.all.3class.distsim.crf.ser.gz",
+    "PersonsIsolatorRegEx": "(?<=\\<PERSON\\>).*?(?=\\<\\/PERSON\\>)"
+  }
+  }

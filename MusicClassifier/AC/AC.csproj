@@ -9,4 +9,21 @@
     <ProjectReference Include="..\Sciendo.ArtistClassifier\Sciendo.ArtistClassifier.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="newknowledgebase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>newknowledgebase.json</LastGenOutput>
+    </None>
+    <None Update="newknowledgebase.json">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>newknowledgebase.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

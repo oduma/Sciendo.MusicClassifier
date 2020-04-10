@@ -56,6 +56,7 @@
             "feat.",
             "featuring",
             "ft",
+            "ft.",
             "instrumental",
             "main",
             "mix",
