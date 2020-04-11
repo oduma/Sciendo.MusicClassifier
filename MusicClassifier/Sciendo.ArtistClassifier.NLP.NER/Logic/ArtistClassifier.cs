@@ -17,20 +17,22 @@ namespace Sciendo.ArtistClassifier.NLP.NER.Logic
     {
         private readonly NlpConfig nlpConfig;
 
+        private readonly CRFClassifier classifier;
+
         public ArtistClassifier(NlpConfig nlpConfig)
         {
             this.nlpConfig = nlpConfig;
+            this.classifier = GetNerClassifier();
         }
         public Artist Classify(string input)
         {
-            var classifier = GetNerClassifier();
-            var crfWithXml = ParseToCrf(classifier, input);
+            var crfWithXml = ParseToCrf(classifier, input.ToUpper());
             var personNames = IsolatePersonNames(crfWithXml);
             if(personNames.Count()!=1)
             {
                 return new Artist { Name = input, ArtistType = ArtistType.Band };
             }
-            if(personNames.First()==input)
+            if(personNames.First()==input.ToUpper())
             {
                 return new Artist { Name = input, ArtistType = ArtistType.Artist };
             }

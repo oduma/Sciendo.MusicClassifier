@@ -66,7 +66,7 @@ namespace ACNN
         private static ServiceProvider ConfigureServices(ServiceCollection serviceCollection, ArtistClassifierConfig artistClassifierConfig)
         {
 
-            serviceCollection.AddTransient<IArtistClassifier>(r => new ArtistClassifier(artistClassifierConfig.NlpConfig));
+            serviceCollection.AddSingleton<IArtistClassifier>(r => new ArtistClassifier(artistClassifierConfig.NlpConfig));
             return serviceCollection.BuildServiceProvider();
         }
 
