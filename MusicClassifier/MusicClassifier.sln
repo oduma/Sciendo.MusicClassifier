@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AC", "AC\AC.csproj", "{D60A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sciendo.ArtistClassifier", "Sciendo.ArtistClassifier\Sciendo.ArtistClassifier.csproj", "{2EB59331-7D27-48AC-B5E2-4A01E241EFCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sciendo.ArtistClassifier.NLP.NER", "Sciendo.ArtistClassifier.NLP.NER\Sciendo.ArtistClassifier.NLP.NER.csproj", "{520842BA-7667-4CFD-AD88-1FEA5B4F7253}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACNN", "ACNN\ACNN.csproj", "{AFDA6DEE-E22C-45B9-9753-CDEFEABE8F79}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{2EB59331-7D27-48AC-B5E2-4A01E241EFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EB59331-7D27-48AC-B5E2-4A01E241EFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EB59331-7D27-48AC-B5E2-4A01E241EFCB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{520842BA-7667-4CFD-AD88-1FEA5B4F7253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{520842BA-7667-4CFD-AD88-1FEA5B4F7253}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{520842BA-7667-4CFD-AD88-1FEA5B4F7253}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{520842BA-7667-4CFD-AD88-1FEA5B4F7253}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AFDA6DEE-E22C-45B9-9753-CDEFEABE8F79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFDA6DEE-E22C-45B9-9753-CDEFEABE8F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFDA6DEE-E22C-45B9-9753-CDEFEABE8F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFDA6DEE-E22C-45B9-9753-CDEFEABE8F79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
