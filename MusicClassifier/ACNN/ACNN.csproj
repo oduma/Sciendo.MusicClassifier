@@ -152,5 +152,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sciendo.ArtistClassifier.NLP.NER\Sciendo.ArtistClassifier.NLP.NER.csproj">
+      <Project>{520842ba-7667-4cfd-ad88-1fea5b4f7253}</Project>
+      <Name>Sciendo.ArtistClassifier.NLP.NER</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
