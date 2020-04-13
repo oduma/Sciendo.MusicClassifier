@@ -50,6 +50,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
                 "antonio carles marques pinto",
                 "aram mp3",
                 "b l a c k i e",
+                "fade",
                 "jennifer evans van der harten",
                 "john 5",
                 @"luther ""guitar junior"" johnson",
