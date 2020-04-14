@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.2-dev-10272" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sciendo.ArtistClassifier.NLP.NER\Sciendo.ArtistClassifier.NLP.NER.csproj" />
+    <ProjectReference Include="..\Sciendo.Wiki.Search\Sciendo.Wiki.Search.csproj" />
+  </ItemGroup>
+
+</Project>

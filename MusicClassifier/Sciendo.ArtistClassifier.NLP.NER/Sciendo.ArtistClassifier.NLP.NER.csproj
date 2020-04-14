@@ -140,7 +140,10 @@
     <Compile Include="Contracts\DataTypes\Artist.cs" />
     <Compile Include="Contracts\DataTypes\ArtistType.cs" />
     <Compile Include="Contracts\IArtistClassifier.cs" />
+    <Compile Include="Contracts\IPersonsNameFinder.cs" />
     <Compile Include="Logic\ArtistClassifier.cs" />
+    <Compile Include="Logic\BaseNLP.cs" />
+    <Compile Include="Logic\PersonsNameFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

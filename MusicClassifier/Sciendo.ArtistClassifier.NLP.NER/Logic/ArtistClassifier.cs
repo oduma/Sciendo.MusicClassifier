@@ -1,28 +1,16 @@
-﻿using edu.stanford.nlp.ie.crf;
-using java.util;
-using Sciendo.ArtistClassifier.NLP.NER.Configuration;
+﻿using Sciendo.ArtistClassifier.NLP.NER.Configuration;
 using Sciendo.ArtistClassifier.NLP.NER.Contracts;
 using Sciendo.ArtistClassifier.NLP.NER.Contracts.DataTypes;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Sciendo.ArtistClassifier.NLP.NER.Logic
 {
-    public class ArtistClassifier : IArtistClassifier
+    public class ArtistClassifier : BaseNLP, IArtistClassifier
     {
-        private readonly NlpConfig nlpConfig;
 
-        private readonly CRFClassifier classifier;
 
-        public ArtistClassifier(NlpConfig nlpConfig)
+        public ArtistClassifier(NlpConfig nlpConfig):base(nlpConfig)
         {
-            this.nlpConfig = nlpConfig;
-            this.classifier = GetNerClassifier();
         }
         public Artist Classify(string input)
         {
@@ -38,26 +26,6 @@ namespace Sciendo.ArtistClassifier.NLP.NER.Logic
             }
             return new Artist { Name = input, ArtistType = ArtistType.Band };
 
-        }
-
-        private IEnumerable<string> IsolatePersonNames(string crfWithXml)
-        {
-            var results = Regex.Matches(crfWithXml, nlpConfig.PersonsIsolatorRegEx);
-            foreach(var result in results)
-            {
-                if (!string.IsNullOrEmpty(result.ToString().Trim()))
-                    yield return result.ToString().Trim();
-            }
-        }
-
-        private string ParseToCrf(CRFClassifier classifier, string input)
-        {
-            return classifier.classifyWithInlineXML(input);
-        }
-
-        private CRFClassifier GetNerClassifier()
-        {
-            return CRFClassifier.getClassifierNoExceptions(nlpConfig.JarRoot + nlpConfig.ClassifiersDirectory + nlpConfig.Ner3ClassesModel);
         }
     }
 }

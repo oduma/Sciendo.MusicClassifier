@@ -1,0 +1,44 @@
+{
+  "wikiSearch": {
+    "WikiSearchUrlParametersCleanUp": {
+      " ": "_",
+      "&": "%26",
+      "'": "%27",
+      "+": "%2B"
+    },
+    "WikiSearchLanguageHelpers": [
+      {
+        "Language": "en",
+        "Helper": "(band)"
+      },
+      {
+        "Language": "fr",
+        "Helper": "(groupe)"
+      },
+      {
+        "Language": "de",
+        "Helper": ""
+      },
+      {
+        "Language": "pt",
+        "Helper": ""
+      },
+      {
+        "Language": "es",
+        "Helper": "(banda)"
+      },
+      {
+        "Language": "sv",
+        "Helper": ""
+      }
+    ],
+    "WikiSearchTemplateUrl": "https://{0}.wikipedia.org/w/api.php?action=query&list=search&srsearch={1}&format=json",
+    "MaxNoOfResultsConsidered": "10"
+  },
+  "nlpConfig": {
+    "JarRoot": "C:\\Code\\Sciendo\\model.for.nlp",
+    "ClassifiersDirectory": "\\classifiers",
+    "Ner3ClassesModel": "\\english.all.3class.distsim.crf.ser.gz",
+    "PersonsIsolatorRegEx": "(?<=\\<PERSON\\>).*?(?=\\<\\/PERSON\\>)"
+  }
+  }
