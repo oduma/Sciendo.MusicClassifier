@@ -19,7 +19,6 @@ namespace Sciendo.ArtistEnhancer.Logic
         private readonly KnowledgeBase knowledgeBase;
         private readonly IWiki wikiSearch;
         private readonly IPersonsNameFinder personsNameFinder;
-        private const string placeholderMarker = ", ";
 
         public BandEnhancer(ILogger<BandEnhancer> logger, IKnowledgeBaseFactory knowledgeBaseFactory, string knowledgeBaseFileName, IWiki wikiSearch, IPersonsNameFinder personsNameFinder)
         {
@@ -71,7 +70,7 @@ namespace Sciendo.ArtistEnhancer.Logic
             {
                 var membersAreaWithoutNoise = ExcludeNoise(membersArea);
                 var membersInArea = personsNameFinder.FindPersonNames(membersAreaWithoutNoise);
-                if (membersInArea != null && membersInArea.Any())
+                if (membersInArea != null && membersInArea.Any(m=>m.IsAlphaNumeric()))
                 {
                     var sureMembers = membersInArea.ToList();
                     members.AddRange(sureMembers);
@@ -83,9 +82,9 @@ namespace Sciendo.ArtistEnhancer.Logic
         private string ExcludeNoise(string inputString)
         {
             string result = inputString;
-            foreach(var noisePattern in knowledgeBase.Noise)
+            foreach(var noisePattern in knowledgeBase.Noise.Keys)
             {
-                result = Regex.Replace(result, noisePattern, placeholderMarker, RegexOptions.IgnoreCase);
+                result = Regex.Replace(result, noisePattern, knowledgeBase.Noise[noisePattern], RegexOptions.IgnoreCase);
             }
             return result;
         }

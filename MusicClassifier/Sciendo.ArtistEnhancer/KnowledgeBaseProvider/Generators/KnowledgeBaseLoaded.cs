@@ -170,22 +170,23 @@ namespace Sciendo.ArtistEnhancer.KnowledgeBaseProvider.Generators
 
         //};
 
-        public string[] Noise = new[]
+        public Dictionary<string,string> Noise = new Dictionary<string, string>
         {
-            @"\[",
-            @"\]",
-            @"\|",
-            @"=",
-            @"<br\s*\/?>",
-//            @"<br \/>",
-//            @"<br>",
-            @"(?:^|\W)akkordeon(?:$|\W)",
-            @"(?:^|\W)geige(?:$|\W)",
-            @"(?:^|\W)gesang(?:$|\W)",
-            @"(?:^|\W)gitarre(?:$|\W)",
-            @"(?:^|\W)kontrabass(?:$|\W)",
-            @"(?:^|\W)stimme(?:$|\W)",
-            @"(?:^|\W)trompete(?:$|\W)",
+            { @"\[",", " },
+            {@"\]",", " },
+            {@"\|",", " },
+            {@"=",", " },
+            {@"\""","" },
+            {@"'","" },
+            {@"<br\s*\/?>",", " },
+            {@"\\u00fc","u" },
+            {@"(?:^|\W)akkordeon(?:$|\W)",", " },
+            {@"(?:^|\W)geige(?:$|\W)",", " },
+            {@"(?:^|\W)gesang(?:$|\W)",", " },
+            {@"(?:^|\W)gitarre(?:$|\W)",", " },
+            {@"(?:^|\W)kontrabass(?:$|\W)",", " },
+            {@"(?:^|\W)stimme(?:$|\W)",", " },
+            {@"(?:^|\W)trompete(?:$|\W)",", " },
 
 
         };
@@ -217,11 +218,11 @@ namespace Sciendo.ArtistEnhancer.KnowledgeBaseProvider.Generators
             {
                 "fr", new []
                 {
-                    @"(?<=membres actuels)(.*?)(?=\n)",
-                    @"(?<=ex membres)(.*?)(?=\n)",
+                    "(?<=membres actuels)(.*?)(?=\\n)",
+                    @"(?<=ex membres)(.*?)(?=\\n)",
                     @"(?<=Composition du groupe ==\n)(.*?)(?=\n\n\n\n\n\n)",
-                    @"(?<=Membres ==\n)(.*?)(?=\n\n\n== Discographie)",
-                    @"(?<=Musiciens==\n)(.*?)(?=\n\n)",
+                    @"(?<=Membres ==\\n)(.*?)(?=\n\n\n== Discographie)",
+                    @"(?<=Musiciens==\\n)(.*?)(?=\n\n)",
                     @"(?<=Membres originaux ===\n\n)(.*?)(?=\n\n)",
                     @"(?<=Membres actuels ===\n\n)(.*?)(?=\n\n)"
                 }

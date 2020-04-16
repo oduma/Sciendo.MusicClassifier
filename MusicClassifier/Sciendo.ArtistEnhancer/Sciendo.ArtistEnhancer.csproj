@@ -75,6 +75,7 @@
     <Compile Include="KnowledgeBaseProvider\KnowledgeBase.cs" />
     <Compile Include="KnowledgeBaseProvider\KnowledgeBaseFactory.cs" />
     <Compile Include="Logic\BandEnhancer.cs" />
+    <Compile Include="Logic\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

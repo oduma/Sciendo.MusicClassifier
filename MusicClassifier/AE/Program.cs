@@ -37,7 +37,7 @@ namespace AE
                 if (result != null)
                 {
                     Console.WriteLine("Found: {0} - {1} in {2}, with following members:", result.Name, result.PageId, result.Language);
-                    if (result.Members != null)
+                    if (result.Members != null && result.Members.Count>0)
                         foreach (var member in result.Members)
                         {
                             Console.WriteLine(member);
