@@ -19,11 +19,12 @@ namespace Sciendo.ArtistEnhancer.Logic
         private readonly KnowledgeBase knowledgeBase;
         private readonly IWiki wikiSearch;
         private readonly IPersonsNameFinder personsNameFinder;
+        private const string placeholderMarker = ", ";
 
-        public BandEnhancer(ILogger<BandEnhancer> logger, KnowledgeBase knowledgeBase, IWiki wikiSearch, IPersonsNameFinder personsNameFinder)
+        public BandEnhancer(ILogger<BandEnhancer> logger, IKnowledgeBaseFactory knowledgeBaseFactory, string knowledgeBaseFileName, IWiki wikiSearch, IPersonsNameFinder personsNameFinder)
         {
             this.logger = logger;
-            this.knowledgeBase = knowledgeBase;
+            this.knowledgeBase = knowledgeBaseFactory.GetKnowledgeBase(knowledgeBaseFileName);
             this.wikiSearch = wikiSearch;
             this.personsNameFinder = personsNameFinder;
         }
@@ -68,11 +69,25 @@ namespace Sciendo.ArtistEnhancer.Logic
             List<string> members = new List<string>();
             foreach(var membersArea in membersAreas)
             {
-                var membersInArea = personsNameFinder.FindPersonNames(membersArea);
+                var membersAreaWithoutNoise = ExcludeNoise(membersArea);
+                var membersInArea = personsNameFinder.FindPersonNames(membersAreaWithoutNoise);
                 if (membersInArea != null && membersInArea.Any())
-                    members.AddRange(membersInArea);
+                {
+                    var sureMembers = membersInArea.ToList();
+                    members.AddRange(sureMembers);
+                }
             }
             return members.Distinct().ToList();
+        }
+
+        private string ExcludeNoise(string inputString)
+        {
+            string result = inputString;
+            foreach(var noisePattern in knowledgeBase.Noise)
+            {
+                result = Regex.Replace(result, noisePattern, placeholderMarker, RegexOptions.IgnoreCase);
+            }
+            return result;
         }
 
         private IEnumerable<string> GetMembersAreasFormPage(string text, string language)

@@ -8,5 +8,7 @@ namespace Sciendo.ArtistEnhancer.KnowledgeBaseProvider
     public class KnowledgeBase
     {
         public Dictionary<string,string[]> MembersMarkersByLanguages { get; set; }
+
+        public string[] Noise { get; set; }
     }
 }

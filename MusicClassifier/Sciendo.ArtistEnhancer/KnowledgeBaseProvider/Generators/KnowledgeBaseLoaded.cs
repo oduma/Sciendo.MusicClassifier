@@ -169,63 +169,84 @@ namespace Sciendo.ArtistEnhancer.KnowledgeBaseProvider.Generators
         //    }
 
         //};
+
+        public string[] Noise = new[]
+        {
+            @"\[",
+            @"\]",
+            @"\|",
+            @"=",
+            @"<br\s*\/?>",
+//            @"<br \/>",
+//            @"<br>",
+            @"(?:^|\W)akkordeon(?:$|\W)",
+            @"(?:^|\W)geige(?:$|\W)",
+            @"(?:^|\W)gesang(?:$|\W)",
+            @"(?:^|\W)gitarre(?:$|\W)",
+            @"(?:^|\W)kontrabass(?:$|\W)",
+            @"(?:^|\W)stimme(?:$|\W)",
+            @"(?:^|\W)trompete(?:$|\W)",
+
+
+        };
+
         public Dictionary<string, string[]> MembersMarkersByLanguages = new Dictionary<string, string[]>
         {
             {
                 "en", new []
                 {
-                    "(?<=current_members)(.*?)(?=\\\\n)",
-                    "(?<=past_members)(.*?)(?=\\\\n)",
-                    "(?<=Members ===\\\\n)(.*?)(?=\\\\n\\\\n== Discography)",
-                    "(?<=current_members)(.*?)(?=\n)",
-                    "(?<=past_members)(.*?)(?=\n)",
-                    "(?<=Members ===\n)(.*?)(?=\n\n== Discography)"
+                    @"(?<=current_members)(.*?)(?=\n)",
+                    @"(?<=past_members)(.*?)(?=\n)",
+                    @"(?<=Members ===\n)(.*?)(?=\n\n== Discography)",
+                    @"(?<=current_members)(.*?)(?=\n)",
+                    @"(?<=past_members)(.*?)(?=\n)",
+                    @"(?<=Members ===\n)(.*?)(?=\n\n== Discography)"
                 }
             },
             {
                 "de", new []
                 {
-                    "(?<=Besetzung)(.*?)(?=\n)",
-                    "(?<=| Gr\u00fcnder)(.*?)(?=\n)",
-                    "(?<=Mitglieder ==\n)(.*?)(?=\n\n== Diskografie)",
-                    "(?<=Mitglieder ==\n)(.*?)(?=\n\n== Geschichte)",
-                    "(?<=Bandmitglieder ==\n)(.*?)(?=\n\n== Diskografie)",
-                    "(?<=Ehemalige)(.*?)(?=\n)"
+                    @"(?<=Besetzung)(.*?)(?=\n)",
+                    //@"(?<=| Gr\u00fcnder)(.*?)(?=\n)",
+                    @"(?<=Mitglieder ==\n)(.*?)(?=\n\n== Diskografie)",
+                    @"(?<=Mitglieder ==\n)(.*?)(?=\n\n== Geschichte)",
+                    @"(?<=Bandmitglieder ==\n)(.*?)(?=\n\n== Diskografie)",
+                    @"(?<=Ehemalige)(.*?)(?=\n)"
                 }
             },
             {
                 "fr", new []
                 {
-                    "(?<=membres actuels)(.*?)(?=\n)",
-                    "(?<=ex membres)(.*?)(?=\n)",
-                    "(?<=Composition du groupe ==\n)(.*?)(?=\n\n\n\n\n\n)",
-                    "(?<=Membres ==\n)(.*?)(?=\n\n\n== Discographie)",
-                    "(?<=Musiciens==\n)(.*?)(?=\n\n)",
-                    "(?<=Membres originaux ===\n\n)(.*?)(?=\n\n)",
-                    "(?<=Membres actuels ===\n\n)(.*?)(?=\n\n)"
+                    @"(?<=membres actuels)(.*?)(?=\n)",
+                    @"(?<=ex membres)(.*?)(?=\n)",
+                    @"(?<=Composition du groupe ==\n)(.*?)(?=\n\n\n\n\n\n)",
+                    @"(?<=Membres ==\n)(.*?)(?=\n\n\n== Discographie)",
+                    @"(?<=Musiciens==\n)(.*?)(?=\n\n)",
+                    @"(?<=Membres originaux ===\n\n)(.*?)(?=\n\n)",
+                    @"(?<=Membres actuels ===\n\n)(.*?)(?=\n\n)"
                 }
             },
             {
                 "pt", new []
                 {
-                    "(?<=integrantes)(.*?)(?=\n)",
-                    "(?<=exintegrantes)(.*?)(?=\n)"
+                    @"(?<=integrantes)(.*?)(?=\n)",
+                    @"(?<=exintegrantes)(.*?)(?=\n)"
                 }
             },
             {
                 "es", new []
                 {
-                    "(?<=Miembros)(.*?)(?=\n)",
-                    "(?<=Miembros antiguos)(.*?)(?=\n)",
-                    "(?<=miembros)(.*?)(?=\n)",
-                    "(?<=Otros_miembros)(.*?)(?=\n)",
-                    "(?<=Antiguos miembros)(.*?)(?=\n)"
+                    @"(?<=Miembros)(.*?)(?=\n)",
+                    @"(?<=Miembros antiguos)(.*?)(?=\n)",
+                    @"(?<=miembros)(.*?)(?=\n)",
+                    @"(?<=Otros_miembros)(.*?)(?=\n)",
+                    @"(?<=Antiguos miembros)(.*?)(?=\n)"
                 }
             },
             {
                 "sv", new[]
                 {
-                    "(?<= medlemmar)(.*?)(?=\n)"
+                    @"(?<= medlemmar)(.*?)(?=\n)"
                 }
             }
         };

@@ -12,20 +12,22 @@ namespace Sciendo.Wiki.Search.Logic
 {
     public class Wiki : IWiki
     {
-        private readonly IUrlProvider urlProvider;
+        private readonly IUrlProvider searchUrlProvider;
+        private readonly IUrlProvider pageUrlProvider;
         private readonly IWebGet<string> webGet;
         private readonly WikiSearchConfig wikiSearchConfig;
 
-        public Wiki(IUrlProvider urlProvider, IWebGet<string> webGet, WikiSearchConfig wikiSearchConfig)
+        public Wiki(IUrlProvider searchUrlProvider, IUrlProvider pageUrlProvider, IWebGet<string> webGet, WikiSearchConfig wikiSearchConfig)
         {
-            this.urlProvider = urlProvider;
+            this.searchUrlProvider = searchUrlProvider;
+            this.pageUrlProvider = pageUrlProvider;
             this.webGet = webGet;
             this.wikiSearchConfig = wikiSearchConfig;
         }
 
         public ParsedPage GetPage(long pageId, string language)
         {
-            string wikiResult = webGet.Get(urlProvider.GetUri(language, pageId));
+            string wikiResult = webGet.Get(pageUrlProvider.GetUri(language, pageId));
 
             if (!string.IsNullOrEmpty(wikiResult))
             {
@@ -64,7 +66,7 @@ namespace Sciendo.Wiki.Search.Logic
         }
         private SearchResult SearchInLanguage(string key, string text)
         {
-            var searchResult = JsonConvert.DeserializeObject<WikiSearchResults>(webGet.Get(urlProvider.GetUri(key, text)));
+            var searchResult = JsonConvert.DeserializeObject<WikiSearchResults>(webGet.Get(searchUrlProvider.GetUri(key, text)));
 
             var noOfSearchResults = (searchResult.Query.SearchInfo.TotalHits > wikiSearchConfig.MaxNoOfResultsConsidered)
                 ? wikiSearchConfig.MaxNoOfResultsConsidered

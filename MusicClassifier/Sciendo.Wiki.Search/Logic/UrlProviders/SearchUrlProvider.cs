@@ -3,11 +3,11 @@ using System;
 
 namespace Sciendo.Wiki.Search.Logic.UrlProviders
 {
-    public class UrlProvider : IUrlProvider
+    public class SearchUrlProvider : IUrlProvider
     {
         private readonly WikiSearchConfig wikiSearchConfig;
 
-        public UrlProvider(WikiSearchConfig wikiSearchConfig)
+        public SearchUrlProvider(WikiSearchConfig wikiSearchConfig)
         {
             this.wikiSearchConfig = wikiSearchConfig;
         }
