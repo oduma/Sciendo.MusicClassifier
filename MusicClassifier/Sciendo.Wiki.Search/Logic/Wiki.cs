@@ -66,21 +66,28 @@ namespace Sciendo.Wiki.Search.Logic
         }
         private SearchResult SearchInLanguage(string key, string text)
         {
-            var searchResult = JsonConvert.DeserializeObject<WikiSearchResults>(webGet.Get(searchUrlProvider.GetUri(key, text)));
-
-            var noOfSearchResults = (searchResult.Query.SearchInfo.TotalHits > wikiSearchConfig.MaxNoOfResultsConsidered)
-                ? wikiSearchConfig.MaxNoOfResultsConsidered
-                : searchResult.Query.SearchInfo.TotalHits;
-            for (int iteration = 0; iteration < noOfSearchResults; iteration++)
+            try
             {
-                if (searchResult.Query.SearchResults[iteration].Title.ToLower() == text)
+                var searchResult = JsonConvert.DeserializeObject<WikiSearchResults>(webGet.Get(searchUrlProvider.GetUri(key, text)));
+
+                var noOfSearchResults = (searchResult.Query.SearchInfo.TotalHits > wikiSearchConfig.MaxNoOfResultsConsidered)
+                    ? wikiSearchConfig.MaxNoOfResultsConsidered
+                    : searchResult.Query.SearchInfo.TotalHits;
+                for (int iteration = 0; iteration < noOfSearchResults; iteration++)
                 {
-                    var result = searchResult.Query.SearchResults[iteration];
-                    result.Language = key;
-                    return result;
+                    if (searchResult.Query.SearchResults[iteration].Title.ToLower() == text)
+                    {
+                        var result = searchResult.Query.SearchResults[iteration];
+                        result.Language = key;
+                        return result;
+                    }
                 }
+                return null;
             }
-            return null;
+            catch
+            {
+                return null;
+            }
         }
     }
 }
