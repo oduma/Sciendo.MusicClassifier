@@ -37,9 +37,9 @@ namespace Sciendo.Wiki.Search.Logic
             return null;
         }
 
-        public SearchResult Search(string text)
+        public SearchResult Search(string text, bool useHelpers)
         {
-            SearchResult result = SearchInAllLanguages(text);
+            SearchResult result = SearchInAllLanguages(text,useHelpers);
             if (result == null)
                 result = SearchInAllLanguages(text,true);
             return result;

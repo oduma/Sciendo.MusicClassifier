@@ -31,12 +31,18 @@ namespace Sciendo.ArtistEnhancer.Logic
         {
             if (string.IsNullOrEmpty(bandName))
                 throw new ArgumentNullException(nameof(bandName));
-            var searchResult = wikiSearch.Search(bandName);
+            var searchResult = wikiSearch.Search(bandName, false);
             if (searchResult == null)
                 return new BandWikiPageInfo { Name = bandName };
-            return GetBandWikiPageInfo(searchResult, bandName);
-
-
+            var bandWithInfo = GetBandWikiPageInfo(searchResult, bandName);
+            if(bandWithInfo.Members==null || !bandWithInfo.Members.Any())
+            {
+                searchResult = wikiSearch.Search(bandName, true);
+                if (searchResult == null)
+                    return bandWithInfo;
+                return GetBandWikiPageInfo(searchResult, bandName);
+            }
+            return bandWithInfo;
         }
 
         private BandWikiPageInfo GetBandWikiPageInfo(SearchResult searchResult, string bandName)
@@ -76,7 +82,18 @@ namespace Sciendo.ArtistEnhancer.Logic
                     members.AddRange(sureMembers);
                 }
             }
-            return members.Distinct().ToList();
+            return members.Distinct().Select(a=>GetSimpleLatinLowerCaseString(a)).ToList();
+        }
+
+        private string GetSimpleLatinLowerCaseString(string input)
+        {
+            var result = input.ToLower().Trim();
+            foreach (var key in knowledgeBase.LatinAlphabetTransformations.Keys)
+            {
+                result = result.Replace(key.ToLower(), knowledgeBase.LatinAlphabetTransformations[key]);
+            }
+
+            return result;
         }
 
         private string ExcludeNoise(string inputString)
@@ -94,7 +111,7 @@ namespace Sciendo.ArtistEnhancer.Logic
             if (knowledgeBase.MembersMarkersByLanguages.ContainsKey(language))
                 foreach(var marker in knowledgeBase.MembersMarkersByLanguages[language])
                 {
-                    var possibleMatches = Regex.Matches(text, marker);
+                    var possibleMatches = Regex.Matches(text, marker,RegexOptions.IgnoreCase|RegexOptions.Singleline);
                     if(possibleMatches.Count>0)
                         foreach(var possibleMatch in possibleMatches)
                         {

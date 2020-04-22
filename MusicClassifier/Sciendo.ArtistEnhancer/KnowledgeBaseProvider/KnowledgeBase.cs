@@ -10,5 +10,7 @@ namespace Sciendo.ArtistEnhancer.KnowledgeBaseProvider
         public Dictionary<string,string[]> MembersMarkersByLanguages { get; set; }
 
         public Dictionary<string, string> Noise { get; set; }
+
+        public Dictionary<string, string> LatinAlphabetTransformations { get; set; }
     }
 }
