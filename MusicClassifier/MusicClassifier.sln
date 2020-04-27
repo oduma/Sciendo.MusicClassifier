@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sciendo.ArtistEnhancer", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AE", "AE\AE.csproj", "{93D2DDA4-21B2-4386-8BB0-38759ECF1A5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sciendo.MusicClassifier.Api", "Sciendo.MusicClassifier.Api\Sciendo.MusicClassifier.Api.csproj", "{E20348A3-1D01-4B10-A460-7AEEFAEB2480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{93D2DDA4-21B2-4386-8BB0-38759ECF1A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93D2DDA4-21B2-4386-8BB0-38759ECF1A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93D2DDA4-21B2-4386-8BB0-38759ECF1A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E20348A3-1D01-4B10-A460-7AEEFAEB2480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E20348A3-1D01-4B10-A460-7AEEFAEB2480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E20348A3-1D01-4B10-A460-7AEEFAEB2480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E20348A3-1D01-4B10-A460-7AEEFAEB2480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

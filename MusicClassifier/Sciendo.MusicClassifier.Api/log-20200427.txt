@@ -1,0 +1,306 @@
+2020-04-27 08:07:39.021 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:07:39.080 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:07:39.091 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:07:39.146 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:07:39.159 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:07:39.166 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:07:39.171 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.5686ms.
+2020-04-27 08:07:39.174 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:07:39.188 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 25.0956ms
+2020-04-27 08:07:39.192 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:07:39.194 +01:00 [INF] Request finished in 176.4371ms 200 application/json; charset=utf-8
+2020-04-27 08:14:25.042 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:14:25.064 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:14:25.069 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:14:25.114 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:14:25.215 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:14:25.225 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:14:25.229 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.2441ms.
+2020-04-27 08:14:25.232 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:14:25.257 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 18.827ms
+2020-04-27 08:14:25.325 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:14:25.347 +01:00 [INF] Request finished in 288.6343ms 200 application/json; charset=utf-8
+2020-04-27 08:15:44.338 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:15:44.567 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:15:44.632 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:15:44.657 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:15:44.678 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:15:44.684 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:15:44.708 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.33390000000000003ms.
+2020-04-27 08:15:44.712 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:15:44.715 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 33.9215ms
+2020-04-27 08:15:44.722 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:15:44.727 +01:00 [INF] Request finished in 424.9436ms 200 application/json; charset=utf-8
+2020-04-27 08:16:05.356 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/artists?setName=Full%20Seed%20Set&pageNo=0&pageSize=10  
+2020-04-27 08:16:05.359 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:16:05.362 +01:00 [INF] Route matched with {action = "Get", controller = "Artists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sciendo.MusicClassifier.Api.Models.ArtistsSummary] Get(System.String, Int32, Int32) on controller Sciendo.MusicClassifier.Api.Controllers.ArtistsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:16:05.364 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:16:11.228 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5862.5042ms.
+2020-04-27 08:16:11.230 +01:00 [INF] Executing ObjectResult, writing value of type 'Sciendo.MusicClassifier.Api.Models.ArtistsSummary'.
+2020-04-27 08:16:11.241 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) in 5869.2406ms
+2020-04-27 08:16:11.250 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:16:11.261 +01:00 [INF] Request finished in 5904.8209ms 200 application/json; charset=utf-8
+2020-04-27 08:17:59.742 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:17:59.748 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:17:59.754 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:17:59.756 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:17:59.758 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:17:59.760 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:17:59.764 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.3164ms.
+2020-04-27 08:17:59.768 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:17:59.772 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 10.8122ms
+2020-04-27 08:17:59.775 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:17:59.777 +01:00 [INF] Request finished in 36.0851ms 200 application/json; charset=utf-8
+2020-04-27 08:30:45.513 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:30:45.519 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:30:45.523 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:30:45.526 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:30:45.530 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:30:45.534 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:30:45.538 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.6846ms.
+2020-04-27 08:30:45.547 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:30:45.556 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 17.367800000000003ms
+2020-04-27 08:30:45.558 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:30:45.570 +01:00 [INF] Request finished in 48.5868ms 200 application/json; charset=utf-8
+2020-04-27 08:31:53.067 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:31:53.100 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:31:53.102 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:31:53.115 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:31:53.118 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:31:53.123 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:31:53.138 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.22390000000000002ms.
+2020-04-27 08:31:53.141 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:31:53.146 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 22.753800000000002ms
+2020-04-27 08:31:53.150 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:31:53.154 +01:00 [INF] Request finished in 86.2873ms 200 application/json; charset=utf-8
+2020-04-27 08:32:24.628 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:32:24.636 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:32:24.650 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:32:24.655 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:32:24.658 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:32:24.660 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:32:24.663 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.2412ms.
+2020-04-27 08:32:24.673 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:32:24.681 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 16.512ms
+2020-04-27 08:32:24.688 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:32:24.700 +01:00 [INF] Request finished in 63.6492ms 200 application/json; charset=utf-8
+2020-04-27 08:32:44.067 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:32:44.069 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:32:44.071 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:32:44.074 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:32:44.076 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:32:44.078 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:32:44.082 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.2671ms.
+2020-04-27 08:32:44.084 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:32:44.088 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 8.6209ms
+2020-04-27 08:32:44.093 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:32:44.098 +01:00 [INF] Request finished in 28.0882ms 200 application/json; charset=utf-8
+2020-04-27 08:37:37.821 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:37:37.847 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:37:37.860 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:37:37.864 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:37:37.868 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:37:37.875 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:37:37.881 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.86530000000000007ms.
+2020-04-27 08:37:37.887 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:37:37.903 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 20.3606ms
+2020-04-27 08:37:37.910 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:37:37.914 +01:00 [INF] Request finished in 93.1637ms 200 application/json; charset=utf-8
+2020-04-27 08:38:19.902 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:38:19.908 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:38:19.910 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:38:19.912 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:38:19.914 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:38:19.916 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:38:19.919 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.44020000000000004ms.
+2020-04-27 08:38:19.922 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:38:19.928 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 8.621ms
+2020-04-27 08:38:19.931 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:38:19.933 +01:00 [INF] Request finished in 34.6233ms 200 application/json; charset=utf-8
+2020-04-27 08:39:01.647 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:39:01.670 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:39:01.685 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:39:01.741 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:39:01.816 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:39:01.826 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:39:01.832 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.38680000000000003ms.
+2020-04-27 08:39:01.837 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:39:01.845 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 23.7285ms
+2020-04-27 08:39:01.851 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:39:01.853 +01:00 [INF] Request finished in 216.2589ms 200 application/json; charset=utf-8
+2020-04-27 08:39:07.475 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/artists?setName=Full%20Seed%20Set&pageNo=0&pageSize=10  
+2020-04-27 08:39:07.482 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:39:07.485 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:39:07.488 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:39:07.491 +01:00 [INF] Route matched with {action = "Get", controller = "Artists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sciendo.MusicClassifier.Api.Models.ArtistsSummary] Get(System.String, Int32, Int32) on controller Sciendo.MusicClassifier.Api.Controllers.ArtistsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:39:07.494 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:39:10.717 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3220.9128ms.
+2020-04-27 08:39:10.719 +01:00 [INF] Executing ObjectResult, writing value of type 'Sciendo.MusicClassifier.Api.Models.ArtistsSummary'.
+2020-04-27 08:39:10.722 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) in 3228.2021ms
+2020-04-27 08:39:10.724 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:39:10.726 +01:00 [INF] Request finished in 3255.6755ms 200 application/json; charset=utf-8
+2020-04-27 08:41:35.595 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:41:35.600 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:41:35.604 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:41:35.606 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:41:35.608 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:41:35.610 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:41:35.614 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.228ms.
+2020-04-27 08:41:35.616 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:41:35.622 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 8.535400000000001ms
+2020-04-27 08:41:35.624 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:41:35.627 +01:00 [INF] Request finished in 32.7344ms 200 application/json; charset=utf-8
+2020-04-27 08:42:11.913 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:42:11.916 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:42:11.918 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:42:11.921 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:42:11.923 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:42:11.926 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:42:11.928 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.24600000000000002ms.
+2020-04-27 08:42:11.930 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:42:11.934 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 6.7777ms
+2020-04-27 08:42:11.939 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:42:11.940 +01:00 [INF] Request finished in 27.1119ms 200 application/json; charset=utf-8
+2020-04-27 08:42:17.995 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/artists?setName=Full%20Seed%20Set&pageNo=0&pageSize=10  
+2020-04-27 08:42:18.000 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:42:18.003 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:42:18.005 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:42:18.007 +01:00 [INF] Route matched with {action = "Get", controller = "Artists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sciendo.MusicClassifier.Api.Models.ArtistsSummary] Get(System.String, Int32, Int32) on controller Sciendo.MusicClassifier.Api.Controllers.ArtistsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:42:18.009 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:42:22.909 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4898.1995000000006ms.
+2020-04-27 08:42:22.911 +01:00 [INF] Executing ObjectResult, writing value of type 'Sciendo.MusicClassifier.Api.Models.ArtistsSummary'.
+2020-04-27 08:42:22.914 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) in 4904.7466ms
+2020-04-27 08:42:22.916 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:42:22.918 +01:00 [INF] Request finished in 4927.5164ms 200 application/json; charset=utf-8
+2020-04-27 08:43:14.300 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:43:14.305 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:43:14.307 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:43:14.310 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:43:14.312 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:43:14.316 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:43:14.320 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.7024ms.
+2020-04-27 08:43:14.323 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:43:14.328 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 10.8124ms
+2020-04-27 08:43:14.330 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:43:14.335 +01:00 [INF] Request finished in 37.5099ms 200 application/json; charset=utf-8
+2020-04-27 08:44:44.214 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:44:44.237 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:44:44.244 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:44:44.252 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:44:44.255 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:44:44.259 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:44:44.262 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.24710000000000001ms.
+2020-04-27 08:44:44.268 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:44:44.274 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 13.4655ms
+2020-04-27 08:44:44.276 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:44:44.279 +01:00 [INF] Request finished in 66.1631ms 200 application/json; charset=utf-8
+2020-04-27 08:44:48.838 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/artists?setName=Full%20Seed%20Set&pageNo=0&pageSize=10  
+2020-04-27 08:44:48.845 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:44:48.850 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:44:48.852 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:44:48.856 +01:00 [INF] Route matched with {action = "Get", controller = "Artists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sciendo.MusicClassifier.Api.Models.ArtistsSummary] Get(System.String, Int32, Int32) on controller Sciendo.MusicClassifier.Api.Controllers.ArtistsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:44:48.858 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:44:49.186 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 325.02230000000003ms.
+2020-04-27 08:44:49.190 +01:00 [INF] Executing ObjectResult, writing value of type 'Sciendo.MusicClassifier.Api.Models.ArtistsSummary'.
+2020-04-27 08:44:49.194 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) in 334.363ms
+2020-04-27 08:44:49.196 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:44:49.199 +01:00 [INF] Request finished in 362.1913ms 200 application/json; charset=utf-8
+2020-04-27 08:46:18.991 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:46:19.020 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:46:19.023 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:46:19.038 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:46:19.052 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:46:19.055 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:46:19.057 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.17350000000000002ms.
+2020-04-27 08:46:19.060 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:46:19.066 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 8.5228ms
+2020-04-27 08:46:19.070 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:46:19.072 +01:00 [INF] Request finished in 82.9257ms 200 application/json; charset=utf-8
+2020-04-27 08:48:37.726 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:48:37.752 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:48:37.757 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:48:37.765 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:48:37.772 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:48:37.799 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:48:37.806 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.1981ms.
+2020-04-27 08:48:37.814 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:48:37.821 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 42.8243ms
+2020-04-27 08:48:37.829 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:48:37.831 +01:00 [INF] Request finished in 106.5257ms 200 application/json; charset=utf-8
+2020-04-27 08:48:43.870 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/artists?setName=Full%20Seed%20Set&pageNo=0&pageSize=10  
+2020-04-27 08:48:43.872 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:48:43.874 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:48:43.878 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:48:43.880 +01:00 [INF] Route matched with {action = "Get", controller = "Artists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sciendo.MusicClassifier.Api.Models.ArtistsSummary] Get(System.String, Int32, Int32) on controller Sciendo.MusicClassifier.Api.Controllers.ArtistsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:48:43.883 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:48:44.295 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 409.4723ms.
+2020-04-27 08:48:44.297 +01:00 [INF] Executing ObjectResult, writing value of type 'Sciendo.MusicClassifier.Api.Models.ArtistsSummary'.
+2020-04-27 08:48:44.300 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) in 416.8664ms
+2020-04-27 08:48:44.302 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:48:44.303 +01:00 [INF] Request finished in 440.8758ms 200 application/json; charset=utf-8
+2020-04-27 08:55:38.060 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:55:38.127 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:55:38.194 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:55:38.198 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:55:38.208 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:55:38.212 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:55:38.214 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.24750000000000003ms.
+2020-04-27 08:55:38.220 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:55:38.227 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 13.021500000000001ms
+2020-04-27 08:55:38.238 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:55:38.243 +01:00 [INF] Request finished in 201.9361ms 200 application/json; charset=utf-8
+2020-04-27 08:55:42.286 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/artists?setName=Full%20Seed%20Set&pageNo=0&pageSize=10  
+2020-04-27 08:55:42.288 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:55:42.291 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:55:42.294 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:55:42.296 +01:00 [INF] Route matched with {action = "Get", controller = "Artists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sciendo.MusicClassifier.Api.Models.ArtistsSummary] Get(System.String, Int32, Int32) on controller Sciendo.MusicClassifier.Api.Controllers.ArtistsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:55:42.299 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:55:42.708 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 406.64730000000003ms.
+2020-04-27 08:55:42.710 +01:00 [INF] Executing ObjectResult, writing value of type 'Sciendo.MusicClassifier.Api.Models.ArtistsSummary'.
+2020-04-27 08:55:42.715 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) in 413.75ms
+2020-04-27 08:55:42.718 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:55:42.719 +01:00 [INF] Request finished in 438.5678ms 200 application/json; charset=utf-8
+2020-04-27 08:56:54.227 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 08:56:54.375 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:56:54.379 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:56:54.384 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:56:54.387 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:56:54.391 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:56:54.396 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.2882ms.
+2020-04-27 08:56:54.401 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 08:56:54.406 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 15.0348ms
+2020-04-27 08:56:54.429 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:56:54.437 +01:00 [INF] Request finished in 226.6092ms 200 application/json; charset=utf-8
+2020-04-27 08:56:58.864 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/artists?setName=Full%20Seed%20Set&pageNo=0&pageSize=10  
+2020-04-27 08:56:58.868 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 08:56:58.871 +01:00 [INF] CORS policy execution successful.
+2020-04-27 08:56:58.874 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:56:58.877 +01:00 [INF] Route matched with {action = "Get", controller = "Artists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sciendo.MusicClassifier.Api.Models.ArtistsSummary] Get(System.String, Int32, Int32) on controller Sciendo.MusicClassifier.Api.Controllers.ArtistsController (Sciendo.MusicClassifier.Api).
+2020-04-27 08:56:58.879 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 08:56:59.416 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 535.13970000000006ms.
+2020-04-27 08:56:59.418 +01:00 [INF] Executing ObjectResult, writing value of type 'Sciendo.MusicClassifier.Api.Models.ArtistsSummary'.
+2020-04-27 08:56:59.421 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) in 542.6047ms
+2020-04-27 08:56:59.424 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 08:56:59.426 +01:00 [INF] Request finished in 565.8528ms 200 application/json; charset=utf-8
+2020-04-27 13:44:29.666 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets/  
+2020-04-27 13:44:29.669 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 13:44:29.670 +01:00 [INF] CORS policy execution successful.
+2020-04-27 13:44:29.672 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 13:44:29.674 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-27 13:44:29.676 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 13:44:29.678 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.2862ms.
+2020-04-27 13:44:29.680 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-27 13:44:29.683 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 5.8734ms
+2020-04-27 13:44:29.688 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 13:44:29.693 +01:00 [INF] Request finished in 23.915ms 200 application/json; charset=utf-8
+2020-04-27 13:44:33.798 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/artists?setName=Full%20Seed%20Set&pageNo=0&pageSize=10  
+2020-04-27 13:44:33.801 +01:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2020-04-27 13:44:33.804 +01:00 [INF] CORS policy execution successful.
+2020-04-27 13:44:33.807 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 13:44:33.809 +01:00 [INF] Route matched with {action = "Get", controller = "Artists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sciendo.MusicClassifier.Api.Models.ArtistsSummary] Get(System.String, Int32, Int32) on controller Sciendo.MusicClassifier.Api.Controllers.ArtistsController (Sciendo.MusicClassifier.Api).
+2020-04-27 13:44:33.813 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-27 13:44:34.170 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 354.9623ms.
+2020-04-27 13:44:34.172 +01:00 [INF] Executing ObjectResult, writing value of type 'Sciendo.MusicClassifier.Api.Models.ArtistsSummary'.
+2020-04-27 13:44:34.174 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api) in 362.54560000000004ms
+2020-04-27 13:44:34.176 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ArtistsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-27 13:44:34.178 +01:00 [INF] Request finished in 382.6821ms 200 application/json; charset=utf-8

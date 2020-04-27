@@ -74,6 +74,7 @@ namespace Sciendo.MusicClassifier.KnowledgeBaseProvider.Generators
             {", jr", " jr" },
             {", sr", " sr" },
             {" jr.", " jr" },
+            { "dr. ", "dr " },
         };
 
     }

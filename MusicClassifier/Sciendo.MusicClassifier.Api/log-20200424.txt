@@ -1,0 +1,67 @@
+2020-04-24 22:00:16.113 +01:00 [INF] User profile is available. Using 'C:\Users\octo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-24 22:03:09.765 +01:00 [INF] User profile is available. Using 'C:\Users\octo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-24 22:03:10.268 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/values  
+2020-04-24 22:03:10.372 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:03:10.391 +01:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.ValuesController (Sciendo.MusicClassifier.Api).
+2020-04-24 22:03:10.404 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-24 22:03:10.415 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.7939ms.
+2020-04-24 22:03:10.423 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String[]'.
+2020-04-24 22:03:10.517 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api) in 120.99010000000001ms
+2020-04-24 22:03:10.519 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:03:10.523 +01:00 [INF] Request finished in 257.3877ms 200 application/json; charset=utf-8
+2020-04-24 22:03:15.498 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets  
+2020-04-24 22:03:15.502 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:03:15.509 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-24 22:03:31.160 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets  
+2020-04-24 22:03:32.911 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:03:35.434 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-24 22:03:50.215 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-24 22:04:03.427 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-24 22:04:23.141 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 32901.3795ms.
+2020-04-24 22:04:23.141 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 19688.7639ms.
+2020-04-24 22:04:23.144 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String[]'.
+2020-04-24 22:04:23.165 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String[]'.
+2020-04-24 22:04:23.169 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 67656.8698ms
+2020-04-24 22:04:23.171 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 47732.1191ms
+2020-04-24 22:04:23.174 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:04:23.177 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:04:23.181 +01:00 [INF] Request finished in 67678.6448ms 200 application/json; charset=utf-8
+2020-04-24 22:04:23.181 +01:00 [INF] Request finished in 52025.4075ms 200 application/json; charset=utf-8
+2020-04-24 22:05:34.735 +01:00 [INF] User profile is available. Using 'C:\Users\octo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-24 22:05:35.246 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/values  
+2020-04-24 22:05:35.329 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:05:35.346 +01:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.ValuesController (Sciendo.MusicClassifier.Api).
+2020-04-24 22:05:35.358 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-24 22:05:35.369 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.3966ms.
+2020-04-24 22:05:35.380 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String[]'.
+2020-04-24 22:05:35.468 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api) in 116.96260000000001ms
+2020-04-24 22:05:35.471 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:05:35.477 +01:00 [INF] Request finished in 232.8971ms 200 application/json; charset=utf-8
+2020-04-24 22:05:39.974 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets  
+2020-04-24 22:05:39.979 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:05:39.984 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-24 22:05:39.991 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-24 22:05:39.994 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.7501ms.
+2020-04-24 22:05:39.997 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-24 22:05:40.001 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 14.4817ms
+2020-04-24 22:05:40.011 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:05:40.013 +01:00 [INF] Request finished in 38.8844ms 200 application/json; charset=utf-8
+2020-04-24 22:07:47.739 +01:00 [INF] User profile is available. Using 'C:\Users\octo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-24 22:07:48.229 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/values  
+2020-04-24 22:07:48.314 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:07:48.329 +01:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.ValuesController (Sciendo.MusicClassifier.Api).
+2020-04-24 22:07:48.343 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-24 22:07:48.355 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.40750000000000003ms.
+2020-04-24 22:07:48.369 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String[]'.
+2020-04-24 22:07:48.456 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api) in 120.78490000000001ms
+2020-04-24 22:07:48.458 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.ValuesController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:07:48.462 +01:00 [INF] Request finished in 235.1229ms 200 application/json; charset=utf-8
+2020-04-24 22:07:55.437 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:49037/api/sets  
+2020-04-24 22:07:55.443 +01:00 [INF] Executing endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:07:55.449 +01:00 [INF] Route matched with {action = "Get", controller = "Sets"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Sciendo.MusicClassifier.Api.Controllers.SetsController (Sciendo.MusicClassifier.Api).
+2020-04-24 22:07:55.452 +01:00 [INF] Executing action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) - Validation state: "Valid"
+2020-04-24 22:07:55.456 +01:00 [INF] Executed action method Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.6104ms.
+2020-04-24 22:07:55.458 +01:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectArrayIterator`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-24 22:07:55.461 +01:00 [INF] Executed action Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api) in 10.771600000000001ms
+2020-04-24 22:07:55.463 +01:00 [INF] Executed endpoint 'Sciendo.MusicClassifier.Api.Controllers.SetsController.Get (Sciendo.MusicClassifier.Api)'
+2020-04-24 22:07:55.467 +01:00 [INF] Request finished in 28.45ms 200 application/json; charset=utf-8
